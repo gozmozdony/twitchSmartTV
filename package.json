@@ -1,0 +1,32 @@
+{
+  "name": "twitch-webos",
+  "version": "1.0.0",
+  "description": "Twitch for webos",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gozmozdony/twitchWebOs.git"
+  },
+  "author": "Gyula Szakacs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gozmozdony/twitchWebOs/issues"
+  },
+  "homepage": "https://github.com/gozmozdony/twitchWebOs#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "ts-loader": "^2.2.2",
+    "typescript": "^2.4.1",
+    "vue-loader": "^13.0.1",
+    "vue-template-compiler": "^2.2.1",
+    "webpack": "^3.1.0"
+  },
+  "dependencies": {
+    "semantic-ui": "^2.2.10",
+    "semantic-ui-css": "^2.2.10"
+  }
+}

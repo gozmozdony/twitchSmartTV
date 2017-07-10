@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+		<script
+				src="https://code.jquery.com/jquery-3.1.1.min.js"
+				integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+				crossorigin="anonymous"></script>
+		<script src="semantic/dist/semantic.min.js"></script>
+		<script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
+		<script type="text/javascript">
+		   //sample code for calling LS2 API
+		   var lunaReq= webOS.service.request("luna://com.palm.systemservice",
+			{
+				method:"clock/getTime",
+				parameters:{},
+				onSuccess: function (args) {
+					console.log("UTC:", args.utc);
+				},
+				onFailure: function (args) {
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script src="./dist/build.js"></script>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+{
+    "vendor": "Goozmozdony",
+    "largeIcon": "largeIcon.png",
+    "icon": "icon.png",
+    "main": "index.html",
+    "id": "twitch.webos.gozmozdony",
+    "title": "twitchWebOs",
+    "type": "web",
+    "version": "0.0.1",
+    "uiRevision":2
+}
