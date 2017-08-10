@@ -1,14 +1,21 @@
 {
     "compilerOptions": {
+        "strictNullChecks": true,
         "outDir": "./built/",
         "sourceMap": true,
         "strict": true,
         "noImplicitReturns": true,
-        "module": "es2015",
+        "module": "es6",
         "moduleResolution": "node",
-        "target": "es5"
+        "target": "es5",
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "lib": ["es5", "dom", "es2015.promise"]
     },
     "include": [
         "./src/**/*"
-    ]
+    ],
+    "typeAcquisition": {
+        "enable": true
+    }
 }

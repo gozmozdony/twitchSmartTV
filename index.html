@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+		<script src= "http://player.twitch.tv/js/embed/v1.js"></script>
 		<script
 				src="https://code.jquery.com/jquery-3.1.1.min.js"
 				integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -23,7 +24,25 @@
 		</script>
 	</head>
 	<body>
-		<div id="app"></div>
+		<div id="app">
+			<div class="pusher">
+				<div class="ui inverted vertical masthead center aligned segment">
+					<div class="ui container">
+						<div class="ui large secondary inverted pointing menu">
+							<router-link :to="{ name: 'game-featured'}" class="item">Games</router-link>
+							<router-link :to="{ name: 'stream-featured'}" class="item">Streams</router-link>
+							<div class="center item">
+								<div class="ui icon input">
+									<input type="text" disabled placeholder="Search...">
+									<i class="search link icon"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<router-view></router-view>
+			</div>
+		</div>
 		<script src="./dist/build.js"></script>
 	</body>
 </html>
