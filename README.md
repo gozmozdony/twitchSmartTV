@@ -13,6 +13,7 @@ What things you need to install the software and how to install them
 * LG WebOs TV
 * LG Developer account
 * LG Developer App from the WebOs App Store
+* LG Remote App from IOS App Store or Android Google play
 * [WebOs SDK](http://webostv.developer.lge.com/sdk/download/download-sdk/) - Current version of the LG WebOs SDK
 * [NPM](https://www.npmjs.com/get-npm?utm_source=house&utm_medium=homepage&utm_campaign=free%20orgs&utm_term=Install%20npm) - * NPM package manager with NodeJS
 
@@ -43,6 +44,8 @@ http://webostv.developer.lge.com/develop/app-test/
 After the connection is successful, you can simply click on the build app in WebOs SDK or use the method from here:
 http://webostv.developer.lge.com/sdk/using-webos-tv-cli/testing-web-app-cli/#Listing_Target_Device
 
+Connect the remote app on your smartphone, or use your smart LG remote, to navigate and start the application.
+
 ## Contribution
 
 Anyone who have ideas how to make it better, feel free to make an issue, or contribute to the code.
@@ -56,7 +59,7 @@ Anyone who have ideas how to make it better, feel free to make an issue, or cont
 
 ## Versioning
 
-I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/gozmozdony/twitchWebOs/tags). 
 
 ## Authors
 
