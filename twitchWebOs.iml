@@ -5,5 +5,8 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jquery-3.1.1" level="application" />
+    <orderEntry type="library" name="video" level="application" />
+    <orderEntry type="library" name="videojs-contrib-hls" level="application" />
   </component>
 </module>

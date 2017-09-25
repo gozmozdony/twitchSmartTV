@@ -1,4 +1,5 @@
 import {Rest} from "./Rest";
+import {Stream} from "../models/Stream";
 export class StreamService extends Rest {
 
     private featuredString: string = this.KRAKEN + '/streams/featured';
@@ -12,5 +13,12 @@ export class StreamService extends Rest {
     search(query: string): Promise<any> {
         this.url =  this.streamSearch + query;
         return this.get();
+    }
+
+    map(stream: any): Stream {
+        if (stream.stream) {
+            return new Stream(stream.stream);
+        }
+        return new Stream(stream);
     }
 }

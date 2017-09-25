@@ -2,12 +2,14 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-		<script src= "http://player.twitch.tv/js/embed/v1.js"></script>
+		<link rel="stylesheet" type="text/css" href="assets/animate.css">
+
 		<script
 				src="https://code.jquery.com/jquery-3.1.1.min.js"
 				integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 				crossorigin="anonymous"></script>
 		<script src="semantic/dist/semantic.min.js"></script>
+		<link href="http://vjs.zencdn.net/6.2.4/video-js.css" rel="stylesheet">
 		<script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
 		<script type="text/javascript">
 		   //sample code for calling LS2 API
@@ -22,27 +24,29 @@
 				}
 			});
 		</script>
+		<style>
+			.twitchPurple {
+				background: #6441A4;
+			}
+			#content {
+				margin-left: 260px;
+				margin-right: 1em;
+				-webkit-transform: initial;
+				transform: initial;
+			}
+		</style>
 	</head>
 	<body>
-		<div id="app">
-			<div class="pusher">
-				<div class="ui inverted vertical masthead center aligned segment">
-					<div class="ui container">
-						<div class="ui large secondary inverted pointing menu">
-							<router-link :to="{ name: 'game-featured'}" class="item">Games</router-link>
-							<router-link :to="{ name: 'stream-featured'}" class="item">Streams</router-link>
-							<div class="center item">
-								<div class="ui icon input">
-									<input type="text" disabled placeholder="Search...">
-									<i class="search link icon"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+		<div id="app" class="application">
+			<sidebar-component></sidebar-component>
+			<div class="pusher" id="content">
 				<router-view></router-view>
 			</div>
+
+
 		</div>
+		<script src="http://vjs.zencdn.net/6.2.4/video.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.8.3/videojs-contrib-hls.js"></script>
 		<script src="./dist/build.js"></script>
 	</body>
 </html>

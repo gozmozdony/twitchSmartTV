@@ -1,30 +1,36 @@
-import {Default} from "./Default";
-import {Image} from "./Image";
+export class Video {
 
-export class Video extends Default {
-
-    public broadcast_id: 1;
-    public broadcast_type: string;
-    public description: string;
-    public description_html: string;
-    public game: string;
-    public preview: Image;
-    public views: number;
-
+    public x160p: string;
+    public x360p: string;
+    public x480p: string;
+    public x720p: string;
+    public x720p60: string;
 
     constructor(data?: any) {
-        super();
         try {
-            this.id = data._id;
-            this.broadcast_id = data.broadcast_id;
-            this.broadcast_type = data.broadcast_type;
-            this.description = data.description;
-            this.description_html = data.description_html;
-            this.game = data.game;
-            this.preview = new Image(data.preview);
-            this.views = data.views;
+            this.x160p = data.urls['160p'] ? data.urls['160p'] : null;
+            this.x360p = data.urls['360p'] ? data.urls['360p'] : null;
+            this.x480p = data.urls['480p'] ? data.urls['480p'] : null;
+            this.x720p = data.urls['720p'] ? data.urls['720'] : null;
+            this.x720p60 = data.urls['720p60'] ? data.urls['720p60'] : null;
         }catch(e) {
             console.error(e);
         }
+    }
+
+    public bestResolution(): string {
+        if (this.x720p60) {
+            return this.x720p60;
+        }
+        if (this.x720p) {
+            return this.x720p;
+        }
+        if (this.x480p) {
+            return this.x480p;
+        }
+        if (this.x360p) {
+            return this.x360p;
+        }
+        return this.x160p;
     }
 }
