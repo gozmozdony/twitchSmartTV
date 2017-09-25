@@ -6,10 +6,8 @@ export class Rest {
     protected url: string;
     protected query: string;
 
-    private STREAMPY: string = 'https://pwn.sh/tools/streamapi.py';
     private CLIENTID: string = 'me7m66itmvq616qzbm78jqr1xp4akn';
     private ACCEPT: string = 'application/vnd.twitchtv.v5+json';
-    private STREAMPYKEY: string = '?key=gYhEXpjLbM3lTxRMPUa8qSz6CtOtJ9eM';
     protected KRAKEN: string ='https://api.twitch.tv/kraken';
 
     constructor () {

@@ -1,0 +1,6 @@
+dist/
+OutputIPK/
+.idea/
+.settings/
+node_modules/
+semantic/
