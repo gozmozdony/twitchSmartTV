@@ -10,13 +10,12 @@ These instructions will get you a copy of the project up and running on your Web
 
 What things you need to install the software and how to install them
 
-```
-LG WebOs TV
-LG Developer account
-LG Developer App from the WebOs App Store
-[WebOs SDK](http://webostv.developer.lge.com/sdk/download/download-sdk/) - Current version of the LG WebOs SDK
-[NPM](https://www.npmjs.com/get-npm?utm_source=house&utm_medium=homepage&utm_campaign=free%20orgs&utm_term=Install%20npm) - NPM package manager with NodeJS
-```
+* LG WebOs TV
+* LG Developer account
+* LG Developer App from the WebOs App Store
+* [WebOs SDK](http://webostv.developer.lge.com/sdk/download/download-sdk/) - Current version of the LG WebOs SDK
+* [NPM](https://www.npmjs.com/get-npm?utm_source=house&utm_medium=homepage&utm_campaign=free%20orgs&utm_term=Install%20npm) - * NPM package manager with NodeJS
+
 
 ### Installing
 
