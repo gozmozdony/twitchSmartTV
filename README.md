@@ -1,6 +1,7 @@
 # WebOs Twitch.tv application
 
 A WebOs application to watch your favourite streams.
+I'm not using the TwitchJs to embedd videos, because of the hardware limitations of webOs Tv-s. Therefore you can't see the chat and all the other functions twitch providing.
 
 ## Getting Started
 
@@ -56,6 +57,8 @@ Anyone who have ideas how to make it better, feel free to make an issue, or cont
 * [Typescript](https://www.typescriptlang.org) - The language written in
 * [Semantic UI](https://semantic-ui.com) - Semantic UI framework
 * [Animate CSS](https://daneden.github.io/animate.css/) - CSS animations
+* [Video JS](http://videojs.com) - Video JS framework to play streams
+* [Streamlink](https://streamlink.github.io) - Grabbing streamlinks from twitch
 
 ## Versioning
 
