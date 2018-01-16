@@ -31,7 +31,7 @@ export class Rest {
 
     public resolveStreamUrl(url: string){
         return new Promise((resolve: any, reject: any) => {
-            this.objHttpReq.open("GET", 'http://192.168.0.105/index.php' + '?url=' + url);
+            this.objHttpReq.open("GET", 'http://217.61.3.120:8991/index.php' + '?url=' + url);
             this.objHttpReq.onload = () => resolve(this.objHttpReq.responseText);
             this.objHttpReq.onerror = () => reject(this.objHttpReq.statusText);
             this.objHttpReq.send();
