@@ -1,8 +1,8 @@
-import {Default} from "./Default";
-import {Image} from "./Image";
-import {Channel} from "./Channel";
+import { Default } from "../../../models/Default";
+import { Image } from "../../../models/Image";
+import { Channel } from "../../channel/models/Channel";
 
-export class Stream extends Default{
+export class Stream extends Default {
 
 
     public avarage_fps: number;

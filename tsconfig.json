@@ -3,6 +3,7 @@
         "strictNullChecks": true,
         "outDir": "./built/",
         "sourceMap": true,
+        "declaration": false,
         "strict": true,
         "noImplicitReturns": true,
         "module": "es6",
@@ -10,6 +11,12 @@
         "target": "es5",
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
+        "emitDecoratorMetadata": true,
+        "strictPropertyInitialization": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "jsx": "preserve",
+        "jsxFactory": "h",
         "lib": ["es5", "dom", "es2015.promise"]
     },
     "include": [

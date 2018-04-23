@@ -23,6 +23,63 @@
 				onFailure: function (args) {
 				}
 			});
+
+
+			let selected = null;
+			let selectedGroup = null;
+
+
+			$(function(){
+				$('html').keydown(function(e){
+					// Left
+					if (e.which === 37 ) {
+						findClickable(false);
+					}
+					// up
+					if (e.which === 38 ) {
+						findGroup(false);
+						findClickable(false);
+					}
+					// right
+					if (e.which === 39 ) {
+						findClickable(true);
+					}
+					// down
+					if (e.which === 40 ) {
+						findGroup(true);
+						findClickable(false);
+					}
+				});
+			});
+
+			function findClickable(next) {
+				if (selected) {
+					let newSelect = next ? $(selected).next('.clickable') : $(selected).prev('.clickable');
+					if (newSelect) {
+						$(selected).removeClass('focus');
+						selected = newSelect;					
+					}
+				} else {
+					if (!selectedGroup) {
+						findGroup(false);
+					}
+					selected = $(selectedGroup).first().find('.clickable').first()
+				}
+
+				$(selected).addClass('focus');
+			}
+
+			function findGroup(next) {
+				if (selectedGroup) {
+					let newGroup = next ? $(selectedGroup).next('.clickable-group') : $(selectedGroup).prev('.clickable-group');
+					selectedGroup = newGroup ? newGroup : selectedGroup;				
+				} else {
+					selectedGroup = $('.clickable-group').first();
+				}
+
+				$(selected).removeClass('focus');
+				selected = null;
+			}
 		</script>
 		<style>
 			.twitchPurple {
@@ -34,16 +91,30 @@
 				-webkit-transform: initial;
 				transform: initial;
 			}
+			body {
+				background-color: #17141f;
+				background-image: url(https://static.twitchcdn.net/assets/homepage_gradient_background-4e041d518ac547864a0fffe9f1dc3d96.png),url(https://static.twitchcdn.net/assets/homepage_player_background-917af84661ea166012c8282e3ccb931a.jpg);
+				background-repeat: no-repeat;
+				background-position: top
+			}
+			.mt-0 {
+				margin-top: 0 !important;
+			}
+			.pt-0 {
+				padding-top: 0 !important;
+			}
+			.mb-0 {
+				margin-bottom: 0 !important;
+			}
+			.pb {
+				padding-bottom: 0 !important;
+			}
 		</style>
 	</head>
 	<body>
-		<div id="app" class="application">
-			<sidebar-component></sidebar-component>
-			<div class="pusher" id="content">
-				<router-view></router-view>
-			</div>
-
-
+		<div id="app" class="application ui main container fluid">
+			<menu-component></menu-component>
+			<router-view></router-view>
 		</div>
 		<script src="http://vjs.zencdn.net/6.2.4/video.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.8.3/videojs-contrib-hls.js"></script>

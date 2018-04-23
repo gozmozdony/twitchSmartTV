@@ -1,8 +1,10 @@
 <template>
     <div class="ui basic slim segment animated fadeIn" v-bind:class="{ loading: loading }">
+        <h3 class="ui header">{{ $props.channel }}</h3>
+
         <div class="ui grid padded">
             <div class="one column row">
-                <video id="TwitchPlayer" class="video-js vjs-default-skin" controls></video>
+                <video id="TwitchPlayer" width="1536" height="864" class="video-js vjs-default-skin" controls></video>
             </div>
         </div>
     </div>
@@ -11,9 +13,9 @@
 <script lang="ts">
     import Vue from "vue";
     import Component from "vue-class-component";
-    import {Rest} from "../service/Rest";
-    import {Video} from "../models/Video";
     import videojs from 'video.js';
+    import { Video } from "../../../models/Video";
+    import { Rest } from "../../../service/Rest";
 
 
     @Component({
@@ -56,10 +58,3 @@
         }
     }
 </script>
-
-<style>
-.TwitchPlayer-dimensions {
-    width: 100%;
-    padding-top: 56.25%;
-}
-</style>

@@ -1,46 +1,44 @@
 import Promise from 'promise-polyfill';
 
+declare var process : {
+    env: {
+        __API__: string,
+        __CLIENTID__: string,
+        __ACCEPT__: string,
+        __KRAKEN__: string
+    }
+};
+
+export const SERVER_API = process.env.__API__;
+export const SERVER_CLIENTID = process.env.__CLIENTID__;
+export const SERVER_ACCEPT = process.env.__ACCEPT__;
+export const SERVER_KRAKEN = process.env.__KRAKEN__;
+
 export class Rest {
 
     private objHttpReq: any;
-    protected url: string;
-    protected query: string;
-
-    private CLIENTID: string = 'me7m66itmvq616qzbm78jqr1xp4akn';
-    private ACCEPT: string = 'application/vnd.twitchtv.v5+json';
-    protected KRAKEN: string ='https://api.twitch.tv/kraken';
-
+    
     constructor () {
         this.objHttpReq = new XMLHttpRequest();
     }
 
-    public intoChunks(arr: Array<any>, chunk_size: number) {
-        return arr.map( function(e: any,i: any){
-            return i%chunk_size===0 ? arr.slice(i,i+chunk_size) : null;
-        }).filter(function(e){ return e; }) as any;
-    }
-
-    public get(){
+    public get(resource: string, query?: string): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
-            this.constructHttpReq();
+            this.objHttpReq.open("GET", SERVER_KRAKEN + resource + (query ? query: ''));
+            this.objHttpReq.setRequestHeader('Accept', SERVER_ACCEPT);
+            this.objHttpReq.setRequestHeader('Client-ID', SERVER_CLIENTID);
             this.objHttpReq.onload = (): string => resolve(this.objHttpReq.responseText);
             this.objHttpReq.onerror = (): string => reject(this.objHttpReq.statusText);
             this.objHttpReq.send();
         });
     }
 
-    public resolveStreamUrl(url: string){
+    public resolveStreamUrl(url: string): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
-            this.objHttpReq.open("GET", 'http://217.61.3.120:8991/index.php' + '?url=' + url);
+            this.objHttpReq.open("GET", SERVER_API + '?url=' + url);
             this.objHttpReq.onload = () => resolve(this.objHttpReq.responseText);
             this.objHttpReq.onerror = () => reject(this.objHttpReq.statusText);
             this.objHttpReq.send();
         });
-    }
-
-    private constructHttpReq(): void {
-        this.objHttpReq.open("GET", this.url);
-        this.objHttpReq.setRequestHeader('Accept', this.ACCEPT);
-        this.objHttpReq.setRequestHeader('Client-ID', this.CLIENTID);
     }
 }

@@ -1,4 +1,4 @@
-import {Default} from "./Default";
+import { Default } from "../../../models/Default";
 
 export class Channel extends Default{
 

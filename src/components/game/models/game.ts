@@ -1,5 +1,5 @@
-import {Default} from "./Default";
-import {Image} from "./Image";
+import { Default } from "../../../models/Default";
+import { Image } from "../../../models/Image";
 
 export class Game extends Default {
 
@@ -12,6 +12,7 @@ export class Game extends Default {
 
     constructor(data?: any) {
         super();
+        
         try {
             this.id = data.game ? data.game._id : data._id;
             this.channels = data.channels;
