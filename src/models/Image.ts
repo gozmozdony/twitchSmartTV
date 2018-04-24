@@ -15,4 +15,12 @@ export class Image {
             console.error(e);
         }
     }
+
+    public get sized() {
+        const width = window.innerHeight;
+        if (width > 1080) {
+            return this.template.replace('{width}', '965').replace('{height}', '1348');
+        }
+        return this.template.replace('{width}', '480').replace('{height}', '670');
+    }
 }
