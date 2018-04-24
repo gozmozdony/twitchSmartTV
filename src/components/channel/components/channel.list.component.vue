@@ -1,6 +1,6 @@
 <template>
     <div class="ui grid padded scrollable">
-        <div v-for="channel in list" :key="channel.id" class="four wide column">
+        <div v-for="channel in list" :key="channel.id" class="four wide clickable">
             <router-link :to="{ name: 'game', params: { channel: channel.name }}" class="ui card animated bounceIn">
                 <div class="image" v-bind:style="{ 'background-color': channel.logo ? '' : '#6441A4' }">
                     <img v-bind:src="channel.logo ? channel.logo : 'largeIcon.png'"/>

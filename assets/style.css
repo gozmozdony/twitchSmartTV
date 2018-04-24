@@ -1,0 +1,89 @@
+/*****************************/
+/** MAIN COMP. STYLE        **/
+/*****************************/
+.main-segment {
+    min-height: 80vh;
+    position: relative;
+}
+.main-segment:after {
+    content: '';
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 4%;
+    background-image: linear-gradient(90deg, transparent 14%, #17141f 81%);
+}
+.info-message {
+    height: 66vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info-message h2 {
+    font-size: 2.5rem !important;
+}
+.info-message i.circular.icon {
+    -webkit-box-shadow: 0 0 0 0.1em rgba(255,255,255,.3) inset;
+    box-shadow: 0 0 0 0.1em rgba(255,255,255,.3) inset
+}
+/*****************************/
+/** LIST STYLE              **/
+/*****************************/
+.ui.grid.scrollable {
+    flex-wrap: nowrap;
+    overflow: hidden;
+    height: 73vh;
+}
+a.ui.card {
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    width: 25vw;
+    margin: 1rem .5rem !important;
+    -webkit-transition : all 100ms ease-out; 
+    -moz-transition : all 100ms ease-out;
+    -o-transition : all 100ms ease-out;
+    transition : all 100ms ease-out;
+}
+
+i.circular.icon {
+    -webkit-box-shadow: 0 0 0 0.1em rgba(255,255,255,.4) inset;
+    box-shadow: 0 0 0 0.1em rgba(255,255,255,.4) inset;
+}
+
+.clickable.focus a.ui.card {
+    box-shadow: 0px 0px 8px 3px #6441A4;
+}
+.clickable a.ui.card:hover {
+    box-shadow: 0px 0px 8px 3px #6441A4;
+}
+
+.ui.card .content {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    border-radius: 0 !important;
+}
+.ui.card .image {
+    border-radius: 0 !important;
+}
+.ui.card .content .header {
+    font-size: 3rem !important;
+    color: #fff;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ui.card .content .meta {
+    display: block;
+    color: #fff;
+}
+.ui.card .content .meta span {
+    font-size: 2rem;
+    display: block;
+    padding-top: 1rem;
+}

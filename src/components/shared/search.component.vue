@@ -1,9 +1,9 @@
 <template>
-    <div class="ui grid padded">
+    <div class="ui grid padded search-bar">
         <div class="one column row">
             <div class="column">
                 <div class="ui search" v-bind:class="{ loading: loading }">
-                    <div class="ui icon input" style="width: 100%;">
+                    <div class="ui icon massive input" style="width: 100%;">
                         <input class="prompt" type="text" v-model="input" placeholder="Search games..." v-on:keyup.enter="search()">
                         <i class="search icon"></i>
                     </div>
@@ -44,3 +44,9 @@
  
     }
 </script>
+<style>
+    .search-bar{ 
+        z-index: 101;
+        position: relative;
+    }
+</style>

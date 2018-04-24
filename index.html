@@ -3,11 +3,13 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
 		<link rel="stylesheet" type="text/css" href="assets/animate.css">
+		<link rel="stylesheet" type="text/css" href="assets/style.css">
 
 		<script
 				src="https://code.jquery.com/jquery-3.1.1.min.js"
 				integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 				crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
 		<script src="semantic/dist/semantic.min.js"></script>
 		<link href="http://vjs.zencdn.net/6.2.4/video-js.css" rel="stylesheet">
 		<script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
@@ -24,12 +26,18 @@
 				}
 			});
 
-
 			let selected = null;
 			let selectedGroup = null;
 
-
 			$(function(){
+				$("body").mousewheel(function(event, delta) {
+					if ($('.scrollable').length > 0) {
+						let left = $('.scrollable').first().scrollLeft();
+						left -= (delta * 100)
+						$('.scrollable').first().scrollLeft(left);
+					}
+					event.preventDefault();
+				});
 				$('html').keydown(function(e){
 					// Left
 					if (e.which === 37 ) {
@@ -38,7 +46,9 @@
 					// up
 					if (e.which === 38 ) {
 						findGroup(false);
-						findClickable(false);
+						if (!selected) {
+							findClickable(false);
+						}
 					}
 					// right
 					if (e.which === 39 ) {
@@ -47,7 +57,9 @@
 					// down
 					if (e.which === 40 ) {
 						findGroup(true);
-						findClickable(false);
+						if (!selected) {
+							findClickable(false);
+						}
 					}
 				});
 			});
@@ -55,7 +67,7 @@
 			function findClickable(next) {
 				if (selected) {
 					let newSelect = next ? $(selected).next('.clickable') : $(selected).prev('.clickable');
-					if (newSelect) {
+					if (newSelect.length > 0) {
 						$(selected).removeClass('focus');
 						selected = newSelect;					
 					}
@@ -72,13 +84,15 @@
 			function findGroup(next) {
 				if (selectedGroup) {
 					let newGroup = next ? $(selectedGroup).next('.clickable-group') : $(selectedGroup).prev('.clickable-group');
-					selectedGroup = newGroup ? newGroup : selectedGroup;				
+					selectedGroup = newGroup ? newGroup : selectedGroup;
+					if (selectedGroup.length > 0) {
+						selectedGroup = newGroup;
+						$(selected).removeClass('focus');
+						selected = null;	
+					}				
 				} else {
 					selectedGroup = $('.clickable-group').first();
 				}
-
-				$(selected).removeClass('focus');
-				selected = null;
 			}
 		</script>
 		<style>

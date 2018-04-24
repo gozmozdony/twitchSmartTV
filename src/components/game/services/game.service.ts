@@ -25,9 +25,12 @@ export class GameService extends Rest {
         let data: any = JSON.parse(result);
 
         if (data.hasOwnProperty('games')) {
-            return data.games.map((element: Object) => { 
-                return new Game(element);
-            });
+            if ( data.games) {
+                return data.games.map((element: Object) => { 
+                    return new Game(element);
+                });
+            }
+            return [];
         }
         return data.top.map((element: Object) => { 
             return new Game(element);

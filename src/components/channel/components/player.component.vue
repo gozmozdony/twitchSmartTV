@@ -1,9 +1,10 @@
 <template>
-    <div class="ui basic slim segment animated fadeIn" v-bind:class="{ loading: loading }">
-        <h3 class="ui header">{{ $props.channel }}</h3>
-
+    <div class="ui basic slim segment animated fadeIn">
+        <div class="ui active centered dimmer player-loader" v-if="loading">
+            <div class="ui text massive loader">Loading</div>
+        </div>
         <div class="ui grid padded">
-            <div class="one column row">
+            <div class="one column row video-column">
                 <video id="TwitchPlayer" width="1536" height="864" class="video-js vjs-default-skin" controls></video>
             </div>
         </div>
@@ -13,12 +14,16 @@
 <script lang="ts">
     import Vue from "vue";
     import Component from "vue-class-component";
+    import LoaderComponent from "../../shared/loader.component.vue";
     import videojs from 'video.js';
     import { Video } from "../../../models/Video";
     import { Rest } from "../../../service/Rest";
 
 
     @Component({
+        components: {            
+            LoaderComponent
+        },
         props: {
             channel: String
         }
@@ -58,3 +63,21 @@
         }
     }
 </script>
+<style>
+    .one.column.row.video-column {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .one.column.row.video-column .video-js {
+        height: 78vh !important;
+        width: 70vw !important;
+    }
+    .ui.active.centered.dimmer.player-loader {
+        background: transparent;
+    }
+    .vjs-resize-manager {
+        opacity: 0;
+    }
+</style>

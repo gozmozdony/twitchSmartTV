@@ -1,16 +1,24 @@
 <template>
-    <div class="ui basic slim segment animated fadeIn clickable-group mt-0 pt-0" v-bind:class="{ loading: loading }">
+    <div class="ui basic slim segment main-segment animated fadeIn clickable-group mt-0 pt-0">
 
         <search-component 
             :service="service"
             @searching="searching"
             @search="search">
-            </search-component>
+        </search-component>
 
-        <h3 class="ui center aligned header" v-if="games.length === 0">No games to show</h3>
+        <loader-component v-if="loading"></loader-component>
+
+        <div class="column info-message" v-if="games.length === 0 && !loading">
+            <h2 class="ui center inverted aligned icon header">
+                <i class="circular gamepad icon"></i>
+                No games to show
+            </h2>
+        </div>
+
         <game-list-component 
             :list="games" 
-            v-if="!loading">
+            v-if="!loading && games.length !== 0">
         </game-list-component>
 
     </div>
@@ -22,11 +30,13 @@
     import { Game } from "../models/Game";
     import { GameService } from "../services/game.service";
     import SearchComponent from "../../shared/search.component.vue";
+    import LoaderComponent from "../../shared/loader.component.vue";
     import GameListComponent from "./games.list.component.vue";
 
     @Component({
         components: {
             SearchComponent,
+            LoaderComponent,
             GameListComponent
         }
     })

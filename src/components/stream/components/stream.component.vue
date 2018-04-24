@@ -1,15 +1,25 @@
 <template>
-    <div class="ui basic slim segment animated fadeIn mt-0 pt-0" v-bind:class="{ loading: loading }">
+    <div class="ui basic slim segment main-segment animated fadeIn clickable-group  mt-0 pt-0">
         <search-component 
             :service="service"
             :init="game"
             @searching="searching"
             @search="search">
-            </search-component>
+        </search-component>
+
+        <loader-component v-if="loading"></loader-component>
+
+
+        <div class="column info-message" v-if="streams.length === 0 && !loading">
+            <h2 class="ui center inverted aligned icon header">
+                <i class="circular video icon"></i>
+                No streams to show
+            </h2>
+        </div>
 
         <stream-list-component 
             :list="streams" 
-            v-if="!loading">
+            v-if="!loading && streams.length !== 0">
         </stream-list-component>
 
     </div>
@@ -19,6 +29,7 @@
     import Vue from "vue";
     import Component from "vue-class-component";
     import SearchComponent from "../../shared/search.component.vue";
+    import LoaderComponent from "../../shared/loader.component.vue";
     import StreamListComponent from "./stream.list.component.vue";
     import { Stream } from "../models/stream";
     import { StreamService } from "../services/stream.service";
@@ -26,6 +37,7 @@
     @Component({
         components: {
             SearchComponent,
+            LoaderComponent,
             StreamListComponent
         },
         props: {

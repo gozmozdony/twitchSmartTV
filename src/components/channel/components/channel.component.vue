@@ -1,15 +1,25 @@
 <template>
-    <div class="ui basic slim segment animated fadeIn mt-0 pt-0" v-bind:class="{ loading: loading }">
+    <div class="ui basic slim segment main-segment animated fadeIn clickable-group mt-0 pt-0">
         <search-component 
             :service="service"
             :init="channel"
             @searching="searching"
             @search="search">
-            </search-component>
+        </search-component>
+
+        <loader-component v-if="loading"></loader-component>
+
+        <div class="column info-message" v-if="channels.length === 0 && !loading">
+            <h2 class="ui center inverted aligned icon header">
+                <i class="circular users icon"></i>
+                Search for channels
+            </h2>
+        </div>
+ 
 
         <channel-list-component 
             :list="channels" 
-            v-if="!loading">
+            v-if="!loading && channels.length !== 0">
         </channel-list-component>
     </div>
 </template>
@@ -20,11 +30,13 @@
     import {Channel} from "../models/channel";
     import {ChannelService} from "../services/channel";
     import SearchComponent from "../../shared/search.component.vue";
+    import LoaderComponent from "../../shared/loader.component.vue";
     import ChannelListComponent from "./channel.list.component.vue";
 
     @Component({
         components: {
             SearchComponent,
+            LoaderComponent,
             ChannelListComponent
         },
         props: {
@@ -50,34 +62,3 @@
     }
 
 </script>
-
-<style>
-    .ui.grid.scrollable {
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-    }
-    a.ui.card {
-        height: 100%;
-        border-radius: 0;
-        background: transparent;
-        box-shadow: none;
-    }
-
-    a.ui.card:focus {
-        box-shadow: 1px 1px 2px 4px #6441A4;
-    }
-
-    .ui.card .content {
-        position: absolute;
-        z-index: 100;
-        width: 100%;
-        background: rgba(0,0,0,0.5);
-    }
-    .ui.card .content .header {
-        color: #fff;
-    }
-    .ui.card .content .meta {
-        display: block;
-        color: #fff;
-    }
-</style>
