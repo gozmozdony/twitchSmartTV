@@ -11,9 +11,13 @@ export default class NavigationGroup implements Navigatable {
     }
 
     public isActive(): number {
-        return this.navigationElements.findIndex((navItem: NavigationItem) => {
-            return navItem.active;
-        });   
+        let i = 0;
+        for (i = 0; i < this.navigationElements.length; i++) {
+            if (this.navigationElements[i].active) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public disable(): void {

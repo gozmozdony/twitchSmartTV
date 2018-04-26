@@ -24,29 +24,20 @@
 </template>
 
 <script lang="ts">
-    import Vue from "vue";
     import Component from "vue-class-component";
     import { Game } from "../models/Game";
-    import NavigationGroup from "../../../models/NavigationGroup";
-    import NavigationItem from "../../../models/NavigationItem";
-    import NavigationService from "../../../service/navigation.service";
+    import { Navigation } from "../../shared/navigation.component.vue";
 
     @Component({
         props: {
             list: Array
         }
     })
-    export default class GameListComponent extends Vue {
+    export default class GameListComponent extends Navigation {
         public list: Game[];
 
         public mounted() {
-            NavigationService.navigationAdd(new NavigationGroup(this.list.map((game: Game) => {
-                return  new NavigationItem('navigationItemGames', this.$refs[game.id][0].$el);
-            })));
-        }
-
-        public destroyed() {
-            NavigationService.removeLast();
+            super.mounted();
         }
     }
 </script>

@@ -46,7 +46,11 @@
         }
 
         public mounted() {
-            NavigationService.navigationAdd(new NavigationGroup([new NavigationItem('search', this.$refs.search)]));
+            NavigationService.navigationAdd(
+                new NavigationGroup([
+                    new NavigationItem(this.$refs.search as any)
+                ])
+            );
         }
  
     }

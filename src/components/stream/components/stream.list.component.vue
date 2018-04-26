@@ -24,25 +24,20 @@
 </template>
 
 <script lang="ts">
-    import Vue from "vue";
     import Component from "vue-class-component";
     import { Stream } from "../models/Stream";
-    import NavigationGroup from "../../../models/NavigationGroup";
-    import NavigationItem from "../../../models/NavigationItem";
-    import NavigationService from "../../../service/navigation.service";
+    import { Navigation } from "../../shared/navigation.component.vue";
 
     @Component({
         props: {
             list: Array
         }
     })
-    export default class StreamListComponent extends Vue {
+    export default class StreamListComponent extends Navigation {
         public list: Stream[];
 
         public mounted() {
-            NavigationService.navigationAdd(new NavigationGroup(this.list.map((stream: Stream) => {
-                return  new NavigationItem('navigationItemGames', <any>this.$refs[stream.id][0].$el);
-            })));
+            super.mounted();
         }
     }
 </script>

@@ -14,9 +14,13 @@ export default class NavigationService {
     }
 
     private static isActive(): number {
-        return this.navigationGroups.findIndex((nav: NavigationGroup) => {
-            return nav.active;
-        });
+        let i = 0;
+        for (i = 0; i < this.navigationGroups.length; i++) {
+            if (this.navigationGroups[i].active) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public static navigateUp() {

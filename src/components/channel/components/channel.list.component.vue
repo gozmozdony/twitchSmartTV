@@ -20,16 +20,20 @@
 </template>
 
 <script lang="ts">
-    import Vue from "vue";
     import Component from "vue-class-component";
     import { Channel } from "../models/Channel";
+    import { Navigation } from "../../shared/navigation.component.vue";
 
     @Component({
         props: {
             list: Array
         }
     })
-    export default class GameListComponent extends Vue {
+    export default class GameListComponent extends Navigation {
         public list: Channel[];
+
+        public mounted() {
+            super.mounted();
+        }
     }
 </script>
