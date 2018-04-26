@@ -4,7 +4,7 @@
             <div class="column">
                 <div class="ui search" v-bind:class="{ loading: loading }">
                     <div class="ui icon massive input" style="width: 100%;">
-                        <input class="prompt" type="text" v-model="input" placeholder="Search games..." v-on:keyup.enter="search()">
+                        <input class="prompt" type="text" v-model="input" ref="search" placeholder="Search games..." v-on:keyup.enter="search()">
                         <i class="search icon"></i>
                     </div>
                 </div>
@@ -16,6 +16,9 @@
     import Vue from "vue";
     import Component from "vue-class-component";
     import { RestService } from "../../interfaces/rest.service.interface";
+    import NavigationGroup from "../../models/NavigationGroup";
+    import NavigationItem from "../../models/NavigationItem";
+    import NavigationService from "../../service/navigation.service";
 
     @Component({
         props: {
@@ -40,6 +43,10 @@
                 this.$emit('search', this.service.map(data));
                 this.loading = false;
             });
+        }
+
+        public mounted() {
+            NavigationService.navigationAdd(new NavigationGroup([new NavigationItem('search', this.$refs.search)]));
         }
  
     }

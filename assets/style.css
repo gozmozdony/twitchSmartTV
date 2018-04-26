@@ -28,6 +28,33 @@
     -webkit-box-shadow: 0 0 0 0.1em rgba(255,255,255,.3) inset;
     box-shadow: 0 0 0 0.1em rgba(255,255,255,.3) inset
 }
+.twitchPurple {
+    background: #6441A4;
+}
+#content {
+    margin-left: 260px;
+    margin-right: 1em;
+    -webkit-transform: initial;
+    transform: initial;
+}
+body {
+    background-color: #17141f;
+    background-image: url(https://static.twitchcdn.net/assets/homepage_gradient_background-4e041d518ac547864a0fffe9f1dc3d96.png),url(https://static.twitchcdn.net/assets/homepage_player_background-917af84661ea166012c8282e3ccb931a.jpg);
+    background-repeat: no-repeat;
+    background-position: top
+}
+.mt-0 {
+    margin-top: 0 !important;
+}
+.pt-0 {
+    padding-top: 0 !important;
+}
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+.pb {
+    padding-bottom: 0 !important;
+}
 /*****************************/
 /** LIST STYLE              **/
 /*****************************/
@@ -53,10 +80,10 @@ i.circular.icon {
     box-shadow: 0 0 0 0.1em rgba(255,255,255,.4) inset;
 }
 
-.clickable.focus a.ui.card {
+a.ui.card:focus {
     box-shadow: 0px 0px 8px 3px #6441A4;
 }
-.clickable a.ui.card:hover {
+a.ui.card:hover {
     box-shadow: 0px 0px 8px 3px #6441A4;
 }
 
@@ -71,7 +98,7 @@ i.circular.icon {
     border-radius: 0 !important;
 }
 .ui.card .content .header {
-    font-size: 3rem !important;
+    font-size: 2rem !important;
     color: #fff;
     width: 100%;
     white-space: nowrap;
@@ -83,7 +110,7 @@ i.circular.icon {
     color: #fff;
 }
 .ui.card .content .meta span {
-    font-size: 2rem;
+    font-size: 1.5rem;
     display: block;
-    padding-top: 1rem;
+    padding-top: .5rem;
 }

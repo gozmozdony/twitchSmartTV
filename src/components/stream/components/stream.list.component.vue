@@ -1,7 +1,7 @@
 <template>
     <div class="ui grid padded scrollable">
       <div v-for="stream in list" :key="stream.id" class="four wide clickable">
-            <router-link :to="{ name: 'game', params: { channel: stream.channel.name }}" class="ui card animated bounceIn">
+            <router-link :to="{ name: 'game', params: { channel: stream.channel.name }}" class="ui card animated bounceIn" :ref="stream.id">
                 <div class="image">
                     <img v-bind:src="stream.preview.large"/>
                 </div>
@@ -27,6 +27,9 @@
     import Vue from "vue";
     import Component from "vue-class-component";
     import { Stream } from "../models/Stream";
+    import NavigationGroup from "../../../models/NavigationGroup";
+    import NavigationItem from "../../../models/NavigationItem";
+    import NavigationService from "../../../service/navigation.service";
 
     @Component({
         props: {
@@ -35,5 +38,11 @@
     })
     export default class StreamListComponent extends Vue {
         public list: Stream[];
+
+        public mounted() {
+            NavigationService.navigationAdd(new NavigationGroup(this.list.map((stream: Stream) => {
+                return  new NavigationItem('navigationItemGames', <any>this.$refs[stream.id][0].$el);
+            })));
+        }
     }
 </script>

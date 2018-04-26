@@ -1,19 +1,19 @@
 <template>
-    <div class="ui basic segment animated bounceInDown mb-0 clickable-group">
+    <div class="ui basic segment animated bounceInDown mb-0">
         <div class="ui grid padded">
             <router-link :to="{ name: 'home'}" href="#" class="ui medium image">
                 <img :src="'./assets/Twitch_White_RGB.png'">
             </router-link>
             <div class="ui three massive basic menu">
-                <router-link :to="{ name: 'game-featured'}" class="ui animated item large clickable">
+                <router-link :to="{ name: 'game-featured'}" class="ui animated item large" ref="navigationItemGames">
                     <i class="gamepad icon"></i>
                     Games
                 </router-link>
-                <router-link :to="{ name: 'stream-featured'}" class="animated item clickable">
+                <router-link :to="{ name: 'stream-featured'}" class="animated item"  ref="navigationItemStreams">
                     <i class="video icon"></i>
                     Streams
                 </router-link>
-                <router-link :to="{ name: 'channel'}" class="animated item clickable">
+                <router-link :to="{ name: 'channel'}" class="animated item" ref="navigationItemChannels">
                     <i class="users icon"></i>
                     Channels
                 </router-link>
@@ -25,9 +25,22 @@
 <script lang="ts">
     import Vue from "vue";
     import Component from "vue-class-component";
+    import NavigationGroup from "../../models/NavigationGroup";
+    import NavigationItem from "../../models/NavigationItem";
+    import NavigationService from "../../service/navigation.service";
 
     @Component
-    export default class MenuComponent extends Vue {}
+    export default class MenuComponent extends Vue {
+
+        public mounted() {
+            NavigationService.navigationAdd(new NavigationGroup([
+                new NavigationItem('navigationItemGames', this.$refs.navigationItemGames.$el),
+                new NavigationItem('navigationItemStreams', this.$refs.navigationItemStreams.$el),
+                new NavigationItem('navigationItemChannels', this.$refs.navigationItemChannels.$el)
+            ]));
+        }
+
+    }
 </script>
 
 <style>
@@ -42,7 +55,7 @@
         border-radius: 0 !important;
         padding: 10px 3px;
         margin: 10px 20px;
-        font-size: 3rem;
+        font-size: 2rem;
         -webkit-transition : all 100ms ease-out; 
         -moz-transition : all 100ms ease-out;
         -o-transition : all 100ms ease-out;
@@ -64,10 +77,10 @@
     .ui.menu .item.router-link-active {
         border-bottom: 8px solid #6441A4;
     }
-    .ui.menu .item.router-link-active.focus {
+    .ui.menu .item.router-link-active:focus {
         color: #8b6ac7 ;
     }
-    .ui.menu .item.focus {
+    .ui.menu .item:focus {
         color: #8b6ac7;
         border-bottom: 8px solid #8b6ac7;
     }

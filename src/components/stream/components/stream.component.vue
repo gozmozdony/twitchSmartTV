@@ -1,5 +1,5 @@
 <template>
-    <div class="ui basic slim segment main-segment animated fadeIn clickable-group  mt-0 pt-0">
+    <div class="ui basic slim segment main-segment animated fadeIn clickable-group mt-0 pt-0">
         <search-component 
             :service="service"
             :init="game"

@@ -6,8 +6,11 @@ import StreamComponent from "./components/stream/components/stream.component";
 import HomeComponent from "./components/home/components/home.component";
 import MenuComponent from "./components/shared/menu.component.vue";
 import VueRouter from "vue-router";
+import GlobalEvents from 'vue-global-events';
+import NavigationService from "./service/navigation.service";
 
 Vue.use(VueRouter);
+Vue.component(GlobalEvents);
 
 const routes = [
     { path: '/', component: HomeComponent, name: 'home' },
@@ -22,9 +25,14 @@ const router = new VueRouter({
     routes
 });
 
-let app = new Vue({
+new Vue({
+    el: '#app',
     router,
     components: {
-        'menu-component': MenuComponent
+        'menu-component': MenuComponent,
+        'global-events': GlobalEvents
+    },
+    data: {
+        navigation: NavigationService
     }
 }).$mount('#app');
