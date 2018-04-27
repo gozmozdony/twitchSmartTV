@@ -1,5 +1,5 @@
 import NavigationGroup from '../models/NavigationGroup';
-import NavigationItem from '../models/NavigationItem';
+
 
 export default class NavigationService {
 

@@ -4,6 +4,8 @@
     import NavigationItem from "../../models/NavigationItem";
     import NavigationGroup from "../../models/NavigationGroup";
 
+    export default {}
+
     export abstract class Navigation extends Vue {
         public mounted() {
             NavigationService.navigationAdd(new NavigationGroup(
