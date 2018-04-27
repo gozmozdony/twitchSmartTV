@@ -18,6 +18,7 @@ export class Channel extends Default{
     public url: string;
     public video_banner: string;
     public views: number;
+    public live: boolean;
 
     constructor(data?: any) {
         super();
@@ -39,6 +40,8 @@ export class Channel extends Default{
             this.url = data.url;
             this.video_banner = data.video_banner;
             this.views = data.views;
+
+            this.live = !!this.video_banner;;
 
         }catch(e) {
             console.error(e);

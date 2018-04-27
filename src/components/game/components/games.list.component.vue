@@ -6,13 +6,13 @@
                     <div class="content">
                         <div class="header">{{ game.name }}</div>
                         <div class="meta">
-                            <span class="date">
-                                <i class="tv icon"></i>
-                                {{ game.channels }} Channels
+                            <span>
+                                <i class="eye icon"></i>
+                                {{ game.viewers }} Viewers
                             </span>
                             <span>
-                            <i class="eye icon"></i>
-                                {{ game.viewers }} Viewers
+                                <i class="video icon"></i>
+                                {{ game.channels }} Channels
                             </span>
                         </div>
                     </div>

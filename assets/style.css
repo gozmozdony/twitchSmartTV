@@ -59,7 +59,7 @@ body {
 /** LIST STYLE              **/
 /*****************************/
 .ui.grid.scrollable {
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
     height: 73%;
 }
@@ -92,6 +92,7 @@ a.ui.card:focus {
 }
 a.ui.card:hover {
     box-shadow: 0px 0px 8px 3px #6441A4;
+    background: rgba(0,0,0,0.5);
 }
 
 .ui.card .content {
@@ -120,4 +121,8 @@ a.ui.card:hover {
     font-size: 1.5rem;
     display: block;
     padding-top: .5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
 }

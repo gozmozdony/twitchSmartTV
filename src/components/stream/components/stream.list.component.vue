@@ -9,8 +9,8 @@
                     <div class="content">
                         <div class="header">{{ stream.channel.name }}</div>
                         <div class="meta">
-                            <span class="date">
-                                <i class="tv icon"></i>
+                            <span>
+                                <i class="gamepad icon"></i>
                                 {{ stream.game }}
                             </span>
                             <span>

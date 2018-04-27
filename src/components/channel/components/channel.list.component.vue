@@ -6,12 +6,16 @@
                     <div class="image" v-bind:style="{ 'background-color': channel.logo ? '' : '#6441A4' }">
                         <img v-bind:src="channel.logo ? channel.logo : 'largeIcon.png'"/>
                     </div>
-                    <div class="content">
+                    <div class="content"  :class="{'live': channel.live}">
                         <div class="header">{{ channel.name }}</div>
                         <div class="meta">
                             <span>
                                 <i class="eye icon"></i>
-                                {{ channel.followers }} Viewers
+                                {{ channel.views }} Views
+                            </span>
+                            <span>
+                                <i class="bell icon"></i>
+                                {{ channel.followers }} Followers
                             </span>
                         </div>
                     </div>
@@ -39,3 +43,18 @@
         }
     }
 </script>
+
+<style>
+    .content.live:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 20px;
+        height: 20px;
+        opacity: 0.7;
+        border-radius: 20px;
+        background-color: red;
+    }
+</style>
