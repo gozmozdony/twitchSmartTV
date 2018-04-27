@@ -4,7 +4,7 @@
             <div class="column">
                 <div class="ui search" v-bind:class="{ loading: loading }">
                     <div class="ui icon massive input" style="width: 100%;">
-                        <input class="prompt" type="text" v-model="input" ref="search" placeholder="Search games..." v-on:keyup.enter="search()">
+                        <input class="prompt" type="text" v-model="input" ref="search" :placeholder="'Search ' + service.type + '...'" v-on:keyup.enter="search()">
                         <i class="search icon"></i>
                     </div>
                 </div>

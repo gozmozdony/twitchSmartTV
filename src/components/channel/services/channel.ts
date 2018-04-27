@@ -4,6 +4,7 @@ import { Rest } from "../../../service/Rest";
 export class ChannelService extends Rest {
 
     private channelSearch: string = '/search/channels?query=';
+    public  type: string = 'channel';
 
     public search(query: string): Promise<any> {
         return this.get(this.channelSearch, query);

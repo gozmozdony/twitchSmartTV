@@ -5,6 +5,7 @@ export class GameService extends Rest {
 
     private gameTop: string = '/games/top';
     private gameSearch: string = '/search/games?query=';
+    public  type: string = 'game';
 
     constructor() {
         super();

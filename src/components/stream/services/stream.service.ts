@@ -5,6 +5,7 @@ export class StreamService extends Rest {
 
     private featuredString: string ='/streams/featured';
     private streamSearch: string = '/search/streams?query=';
+    public  type: string = 'stream';
 
     constructor() {
         super();
