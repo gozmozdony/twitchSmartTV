@@ -78,6 +78,19 @@ body {
     animation-delay: 1.0s
 }
 /*****************************/
+/** MENU STYLE              **/
+/*****************************/
+.logo-img {
+    background-image: url('./Twitch_White_RGB.svg');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    outline: none;
+    background-position: center center;
+}
+.logo-img:focus, .logo-img:hover {
+    background-image: url('./Twitch_Purple_RGB.svg');
+}
+/*****************************/
 /** LIST STYLE              **/
 /*****************************/
 .ui.grid.scrollable {
@@ -91,6 +104,7 @@ body {
 }
 .ui.grid.scrollable .content .clickable{
     display: inline-block;
+    outline: none;
 }
 a.ui.card {
     border-radius: 0;

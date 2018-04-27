@@ -1,9 +1,7 @@
 <template>
     <div class="ui basic segment animated slideInDown mb-0">
         <div class="ui grid padded">
-            <router-link :to="{ name: 'home'}" href="#" class="ui medium image">
-                <img :src="'./assets/Twitch_White_RGB.png'">
-            </router-link>
+            <router-link :to="{ name: 'home'}" href="#" class="ui medium image logo-img"></router-link>
             <div class="ui three massive basic menu">
                 <router-link :to="{ name: 'game-featured'}" class="ui animated item large" ref="navigationItemGames">
                     <i class="gamepad icon"></i>
