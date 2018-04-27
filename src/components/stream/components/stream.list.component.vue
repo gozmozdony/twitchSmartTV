@@ -1,24 +1,26 @@
 <template>
     <div class="ui grid padded scrollable">
-      <div v-for="stream in list" :key="stream.id" class="four wide clickable">
-            <router-link :to="{ name: 'game', params: { channel: stream.channel.name }}" class="ui card animated bounceIn" :ref="stream.id">
-                <div class="image">
-                    <img v-bind:src="stream.preview.large"/>
-                </div>
-                <div class="content">
-                    <div class="header">{{ stream.channel.name }}</div>
-                    <div class="meta">
-                        <span class="date">
-                            <i class="tv icon"></i>
-                            {{ stream.game }}
-                        </span>
-                        <span>
-                            <i class="eye icon"></i>
-                            {{ stream.viewers }} Views
-                        </span>
+        <div class="content">
+            <div v-for="stream in list" :key="stream.id" class="four wide clickable">
+                <router-link :to="{ name: 'game', params: { channel: stream.channel.name }}" class="ui card animated bounceIn" :ref="stream.id">
+                    <div class="image">
+                        <img v-bind:src="stream.preview.large"/>
                     </div>
-                </div>
-            </router-link>
+                    <div class="content">
+                        <div class="header">{{ stream.channel.name }}</div>
+                        <div class="meta">
+                            <span class="date">
+                                <i class="tv icon"></i>
+                                {{ stream.game }}
+                            </span>
+                            <span>
+                                <i class="eye icon"></i>
+                                {{ stream.viewers }} Views
+                            </span>
+                        </div>
+                    </div>
+                </router-link>
+            </div>
         </div>
     </div>
 </template>
