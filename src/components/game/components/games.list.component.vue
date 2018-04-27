@@ -6,11 +6,11 @@
                     <div class="content">
                         <div class="header">{{ game.name }}</div>
                         <div class="meta">
-                            <span>
+                            <span v-if="game.viewers">
                                 <i class="eye icon"></i>
                                 {{ game.viewers }} Viewers
                             </span>
-                            <span>
+                            <span v-if="game.channels">
                                 <i class="video icon"></i>
                                 {{ game.channels }} Channels
                             </span>

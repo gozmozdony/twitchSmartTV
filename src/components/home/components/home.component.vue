@@ -1,5 +1,7 @@
 <template>
-    <div class="ui basic slim segment animated fadeIn clickable-group" v-bind:class="{ loading: loading }">
+    <div class="ui basic slim segment animated fadeIn clickable-group">
+
+        <loader-component v-if="loading"></loader-component>
 
         <game-list-component 
             :list="games" 
@@ -14,12 +16,12 @@
     import Component from "vue-class-component";
     import { Game } from "../../game/models/Game";
     import { GameService } from "../../game/services/game.service";
-    import SearchComponent from "../../shared/search.component.vue";
+    import LoaderComponent from "../../shared/loader.component.vue";
     import GameListComponent from "../../game/components/games.list.component.vue";
 
     @Component({
         components: {
-            SearchComponent,
+            LoaderComponent,
             GameListComponent
         }
     })
