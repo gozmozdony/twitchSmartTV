@@ -1,5 +1,5 @@
 <template>
-    <div class="ui grid padded search-bar">
+    <div class="ui grid padded search-bar animated slideInDown">
         <div class="one column row">
             <div class="column">
                 <div class="ui search" v-bind:class="{ loading: loading }">
@@ -47,10 +47,17 @@
 
         public mounted() {
             NavigationService.navigationAdd(
-                new NavigationGroup([
-                    new NavigationItem(this.$refs.search as any)
-                ])
+                new NavigationGroup(
+                    'search',
+                    [
+                        new NavigationItem(this.$refs.search as any)
+                    ]
+                )
             );
+        }
+
+        public destroyed() {
+            NavigationService.removeByIdentifier('search');
         }
  
     }

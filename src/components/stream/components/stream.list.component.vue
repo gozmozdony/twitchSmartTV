@@ -2,7 +2,7 @@
     <div class="ui grid padded scrollable">
         <div class="content">
             <div v-for="stream in list" :key="stream.id" class="four wide clickable">
-                <router-link :to="{ name: 'game', params: { channel: stream.channel.name }}" class="ui card animated bounceIn" :ref="stream.id">
+                <router-link :to="{ name: 'game', params: { channel: stream.channel.name }}" class="ui card animated fadeInDown" :ref="stream.id">
                     <div class="image">
                         <img v-bind:src="stream.preview.large"/>
                     </div>
@@ -40,6 +40,10 @@
 
         public mounted() {
             super.mounted();
+        }
+
+        public destroyed() {
+            super.destroyed();
         }
     }
 </script>

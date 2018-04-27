@@ -56,6 +56,28 @@ body {
     padding-bottom: 0 !important;
 }
 /*****************************/
+/** ANIMATION DELAYS        **/
+/*****************************/
+
+.clickable:nth-child(1) a.ui.card{
+    animation-delay: 0s
+}
+.clickable:nth-child(2) a.ui.card{
+    animation-delay: .2s
+}
+.clickable:nth-child(3) a.ui.card{
+    animation-delay: .4s
+}
+.clickable:nth-child(4) a.ui.card{
+    animation-delay: .6s
+}
+.clickable:nth-child(5) a.ui.card{
+    animation-delay: .8s
+}
+.clickable:nth-child(6) a.ui.card{
+    animation-delay: 1.0s
+}
+/*****************************/
 /** LIST STYLE              **/
 /*****************************/
 .ui.grid.scrollable {

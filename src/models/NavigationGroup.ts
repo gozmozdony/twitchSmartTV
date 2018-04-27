@@ -4,9 +4,11 @@ import Navigatable from '../interfaces/navigatable.interface';
 export default class NavigationGroup implements Navigatable {
 
     private navigationElements: NavigationItem[] = new Array();
+    public identifier: string;
     public active: boolean;
 
-    constructor(data: NavigationItem[]) {
+    constructor(identifier: string, data: NavigationItem[]) {
+        this.identifier = identifier;
         this.navigationElements = data;
     }
 
@@ -22,7 +24,9 @@ export default class NavigationGroup implements Navigatable {
 
     public disable(): void {
         const active = this.isActive();
-        this.navigationElements[active].active = false;   
+        if (active >= 0) {
+            this.navigationElements[active].active = false;   
+        }
     }
 
     public navigationFirst(): void {

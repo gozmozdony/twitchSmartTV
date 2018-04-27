@@ -2,7 +2,7 @@
     <div class="ui grid padded scrollable">
         <div class="content">
             <div v-for="channel in list" :key="channel.id" class="four wide clickable">
-                <router-link :to="{ name: 'game', params: { channel: channel.name }}" class="ui card animated bounceIn">
+                <router-link :to="{ name: 'game', params: { channel: channel.name }}" class="ui card animated fadeInDown">
                     <div class="image" v-bind:style="{ 'background-color': channel.logo ? '' : '#6441A4' }">
                         <img v-bind:src="channel.logo ? channel.logo : 'largeIcon.png'"/>
                     </div>
@@ -40,6 +40,10 @@
 
         public mounted() {
             super.mounted();
+        }
+
+        public destroyed() {
+            super.destroyed();
         }
     }
 </script>

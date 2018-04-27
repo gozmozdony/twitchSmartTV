@@ -1,4 +1,5 @@
 import NavigationGroup from '../models/NavigationGroup';
+import NavigationItem from '../models/NavigationItem';
 
 export default class NavigationService {
 
@@ -20,7 +21,8 @@ export default class NavigationService {
                 return i;
             }
         }
-        return -1;
+        this.active = this.navigationGroups[0];
+        return 0;
     }
 
     public static navigateUp() {
@@ -53,9 +55,9 @@ export default class NavigationService {
         this.active.navigationPrev();
     }
 
-    public static removeLast() {
-        this.navigationGroups.splice(this.navigationGroups.length -  1, 1);
-        this.active = this.navigationGroups[0];
-        this.active.active = true;
+    public static removeByIdentifier(identifier: string) {
+        this.navigationGroups = this.navigationGroups.filter((nav: NavigationGroup) => {
+            return nav.identifier != identifier;
+        });
     }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="ui basic segment animated bounceInDown mb-0">
+    <div class="ui basic segment animated slideInDown mb-0">
         <div class="ui grid padded">
             <router-link :to="{ name: 'home'}" href="#" class="ui medium image">
                 <img :src="'./assets/Twitch_White_RGB.png'">
