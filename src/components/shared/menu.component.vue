@@ -51,6 +51,7 @@
         -moz-transition : all 100ms ease-out;
         -o-transition : all 100ms ease-out;
         transition : all 100ms ease-out;
+        outline:none;
     }
     .ui.menu .item:first-of-type {
         margin-left: 0;

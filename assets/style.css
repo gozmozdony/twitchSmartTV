@@ -86,6 +86,8 @@ body {
     background-repeat: no-repeat;
     outline: none;
     background-position: center center;
+    -webkit-transition: background-image 0.2s ease-in-out;
+    transition: background-image 0.2s ease-in-out;
 }
 .logo-img:focus, .logo-img:hover {
     background-image: url('./Twitch_Purple_RGB.svg');
@@ -107,6 +109,7 @@ body {
     outline: none;
 }
 a.ui.card {
+    outline: none;
     border-radius: 0;
     background: transparent;
     box-shadow: none;
