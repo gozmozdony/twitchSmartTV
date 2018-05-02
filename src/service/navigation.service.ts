@@ -11,6 +11,7 @@ export default class NavigationService {
         if (!this.active) {
             this.active = this.navigationGroups[0];
             this.active.active = true;
+            this.active.navigationFirst();
         }
     }
 

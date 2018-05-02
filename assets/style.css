@@ -144,8 +144,11 @@ a.ui.card {
     transition : all 100ms ease-out;
 }
 
+.ui.icon.input:focus {
+    outline: none;
+}
 
-.ui.icon.input>input:focus, .ui.icon.input>input:hover {
+.ui.icon.input>input:focus, .ui.icon.input>input:hover, .ui.icon.input:focus>input, .ui.icon.input:hover>input {
     -webkit-box-shadow: 0px 0px 8px 3px #6441A4;
     box-shadow: 0px 0px 8px 3px #6441A4;
     -webkit-transition : all .2s ease-in-out; 
@@ -260,3 +263,42 @@ a.ui.card:focus, a.ui.card:hover  {
     -webkit-animation-name: slideIndown;
     animation-name: slideInDown;
 }
+
+@-webkit-keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+  }

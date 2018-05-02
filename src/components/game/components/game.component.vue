@@ -9,7 +9,7 @@
 
         <loader-component v-if="loading"></loader-component>
 
-        <div class="column info-message" v-if="games.length === 0 && !loading">
+        <div class="column info-message fadeIn animated" v-if="games.length === 0 && !loading">
             <h2 class="ui center inverted aligned icon header">
                 <i class="circular gamepad icon"></i>
                 No games to show

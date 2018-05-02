@@ -1,6 +1,6 @@
 <template>
-    <div class="ui basic segment animated slideInDown mb-0">
-        <div class="ui grid padded">
+    <div class="ui basic segment animated fadeIn mb-0">
+        <div class="ui grid padded menu-padded">
             <router-link :to="{ name: 'home'}" href="#" class="ui medium image logo-img no-navi"></router-link>
             <div class="ui three massive basic menu">
                 <router-link :to="{ name: 'game-featured'}" class="ui animated item large" ref="navigationItemGames">
@@ -72,5 +72,8 @@
     .ui.menu .item:hover {
         color: #8b6ac7 !important;
         border-bottom: 8px solid #8b6ac7;
+    }
+    .menu-padded {
+        padding: 1rem 1rem 0 1rem;
     }
 </style>

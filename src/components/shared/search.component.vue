@@ -1,10 +1,10 @@
 <template>
-    <div class="ui grid padded search-bar animated slideInDown">
+    <div class="ui grid padded search-bar animated fadeIn">
         <div class="one column row">
             <div class="column">
                 <div class="ui search" v-bind:class="{ loading: loading }">
-                    <div class="ui icon massive input" style="width: 100%;">
-                        <input class="prompt" type="text" v-model="input" ref="search" :placeholder="'Search ' + service.type + '...'" v-on:keyup.enter="search()">
+                    <div class="ui icon massive input" style="width: 100%;" ref="search" v-on:keyup.enter="setFocus()" tabindex="1">
+                        <input class="prompt" type="text" v-model="input" ref="searchInput" :placeholder="'Search ' + service.type + '...'" v-on:keyup.enter="search()">
                         <i class="search icon"></i>
                     </div>
                 </div>
@@ -31,12 +31,13 @@
         public service: RestService;
         public loading: boolean = false;
         public input: string = '';
+        public searchInput: Element | any;
 
-        public created() {
+        public created(): void {
             this.input = (this.$props.init ? this.$props.init : '');
         }
     
-        public search() {
+        public search(): void {
             this.loading = true;
             this.$emit('searching');
             this.service.search(this.input).then((data) => { 
@@ -45,7 +46,12 @@
             });
         }
 
-        public mounted() {
+        public setFocus(): void {
+            this.searchInput.focus();
+        }
+
+        public mounted(): void {
+            this.searchInput = this.$refs.searchInput as Element;
             NavigationService.navigationAdd(
                 new NavigationGroup(
                     'search',
@@ -56,7 +62,7 @@
             );
         }
 
-        public destroyed() {
+        public destroyed(): void {
             NavigationService.removeByIdentifier('search');
         }
  

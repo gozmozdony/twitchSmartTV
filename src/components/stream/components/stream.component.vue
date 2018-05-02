@@ -9,7 +9,7 @@
 
         <loader-component v-if="loading"></loader-component>
 
-        <div class="column info-message" v-if="streams.length === 0 && !loading">
+        <div class="column info-message fadeIn animated" v-if="streams.length === 0 && !loading">
             <h2 class="ui center inverted aligned icon header">
                 <i class="circular video icon"></i>
                 No streams to show

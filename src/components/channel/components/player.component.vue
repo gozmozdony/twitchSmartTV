@@ -77,14 +77,7 @@
         public fullScreen(): void {
             if (this.player.requestFullscreen) {
                 this.player.requestFullscreen();
-            }
-            else if (this.player.msRequestFullscreen) {
-                this.player.msRequestFullscreen();
-            }
-            else if (this.player.mozRequestFullScreen) {
-                this.player.mozRequestFullScreen();
-            }
-            else if (this.player.webkitRequestFullscreen) {
+            } else if (this.player.webkitRequestFullscreen) {
                 this.player.webkitRequestFullscreen();
             } else {
                 console.log("Fullscreen API is not supported");
