@@ -5,7 +5,8 @@ declare var process : {
         __API__: string,
         __CLIENTID__: string,
         __ACCEPT__: string,
-        __KRAKEN__: string
+        __KRAKEN__: string,
+        __STREAMLINK__: string;
     }
 };
 
@@ -13,6 +14,7 @@ export const SERVER_API = process.env.__API__;
 export const SERVER_CLIENTID = process.env.__CLIENTID__;
 export const SERVER_ACCEPT = process.env.__ACCEPT__;
 export const SERVER_KRAKEN = process.env.__KRAKEN__;
+export const SERVER_STREAMLINK = process.env.__STREAMLINK__;
 
 export class Rest {
 
@@ -36,6 +38,8 @@ export class Rest {
     public resolveStreamUrl(url: string): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
             this.objHttpReq.open("GET", SERVER_API + '?url=' + url);
+            this.objHttpReq.setRequestHeader('Accept', 'application/json');
+            this.objHttpReq.setRequestHeader('Authorization', SERVER_STREAMLINK);
             this.objHttpReq.onload = () => resolve(this.objHttpReq.responseText);
             this.objHttpReq.onerror = () => reject(this.objHttpReq.statusText);
             this.objHttpReq.send();

@@ -79,7 +79,8 @@ module.exports = {
         __API__: '"http://217.61.3.120:8991/index.php"',
         __CLIENTID__: '"me7m66itmvq616qzbm78jqr1xp4akn"',
         __ACCEPT__: '"application/vnd.twitchtv.v5+json"',
-        __KRAKEN__: '"https://api.twitch.tv/kraken"'
+        __KRAKEN__: '"https://api.twitch.tv/kraken"',
+        __STREAMLINK__: '"Bearer me7m66itmg83kfvvq636qzbmxas78jqr1xp4akn"'
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
