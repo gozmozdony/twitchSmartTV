@@ -27,7 +27,7 @@
         }
 
         public mouseWheel(e: WheelEvent) {
-            if (this.scrollableElement) {
+            if (this.scrollableElement && this.scrollableElement.length > 0) {
                 let left = this.scrollableElement[0].scrollLeft;
                 left += e.deltaY
                 this.scrollableElement[0].scrollLeft = left;
