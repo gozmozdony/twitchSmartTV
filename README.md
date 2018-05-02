@@ -50,11 +50,10 @@ Connect the remote app on your smartphone, or use your TV remote, to navigate an
 ## Compatible - Tested devices
 
 The application has been tested on the following tools/devices:
-* [TV] LG 47LB650V
-* [TOOL] webOS Simulator 3.0.0
-```
+* [TV](http://www.lg.com/uk/support/support-product/lg-47LB650V) LG 47LB650V
+* [TOOL](http://webostv.developer.lge.com/sdk/emulator/introduction-emulator/) webOS Simulator 3.0.0
+
 If you have tested on a device that is not listed, please leave a feedback for me to add it to the list and/or fix the issues you have encountered.
-```
 
 ## Contribution
 
