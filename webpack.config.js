@@ -57,7 +57,7 @@ module.exports = {
   devtool: '#eval-source-map'
 }
 
-module.exports.plugins = (module.exports.plugins || []).concat([
+/*module.exports.plugins = (module.exports.plugins || []).concat([
   new webpack.DefinePlugin({
       'process.env': {
           NODE_ENV: '"development"',
@@ -67,15 +67,15 @@ module.exports.plugins = (module.exports.plugins || []).concat([
           __KRAKEN__: '"https://api.twitch.tv/kraken"'
       }
   })
-])
+])*/
 
-if (process.env.NODE_ENV === 'production') {
+//if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"production"',
+        NODE_ENV: JSON.stringify('production'),
         __API__: '"http://217.61.3.120:8991/index.php"',
         __CLIENTID__: '"me7m66itmvq616qzbm78jqr1xp4akn"',
         __ACCEPT__: '"application/vnd.twitchtv.v5+json"',
@@ -92,4 +92,4 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true
     })
   ])
-}
+//}

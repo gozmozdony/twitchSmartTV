@@ -2,16 +2,8 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-		<link rel="stylesheet" type="text/css" href="assets/animate.css">
 		<link rel="stylesheet" type="text/css" href="assets/style.css">
 
-		<script
-				src="https://code.jquery.com/jquery-3.1.1.min.js"
-				integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-				crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
-		<script src="semantic/dist/semantic.min.js"></script>
-		<link href="http://vjs.zencdn.net/6.2.4/video-js.css" rel="stylesheet">
 		<script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
 		<script type="text/javascript">
 		   //sample code for calling LS2 API
@@ -24,17 +16,6 @@
 				},
 				onFailure: function (args) {
 				}
-			});
-
-			$(function(){
-				$("body").mousewheel(function(event, delta) {
-						if ($('.scrollable').length > 0) {
-								let left = $('.scrollable').first().scrollLeft();
-								left -= (delta * 100)
-								$('.scrollable').first().scrollLeft(left);
-						}
-						event.preventDefault();
-				});
 			});
 		</script>
 	</head>
@@ -49,8 +30,6 @@
 			<menu-component ref="menu"></menu-component>
 			<router-view ref="router"></router-view>
 		</div>
-		<script src="http://vjs.zencdn.net/6.2.4/video.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.8.3/videojs-contrib-hls.js"></script>
 		<script src="./dist/build.js"></script>
 	</body>
 </html>

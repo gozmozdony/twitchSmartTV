@@ -67,4 +67,13 @@
         z-index: 101;
         position: relative;
     }
+    .search-bar .ui.search .ui.icon.input>input{
+        font-size: 1.5rem;
+    }
+    .search-bar  .ui.loading.loading.input>i.icon:after {
+        top: 45%;
+    }
+    .search-bar  .ui.loading.loading.input>i.icon:before {
+        top: 45%;
+    }
 </style>

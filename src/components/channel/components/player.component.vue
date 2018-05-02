@@ -4,8 +4,10 @@
             <div class="ui text massive loader">Loading</div>
         </div>
         <div class="ui grid padded">
+            
             <div class="one column row video-column">
-                <video id="TwitchPlayer" width="1536" height="864" class="video-js vjs-default-skin" controls></video>
+                <video id="twitchPlayer" width="1536" height="864" controls autoplay>
+                </video>
             </div>
         </div>
     </div>
@@ -15,7 +17,6 @@
     import Vue from "vue";
     import Component from "vue-class-component";
     import LoaderComponent from "../../shared/loader.component.vue";
-    import videojs from 'video.js';
     import { Video } from "../../../models/Video";
     import { Rest } from "../../../service/Rest";
 
@@ -30,27 +31,24 @@
     })
     export default class PlayerComponent extends Vue {
 
-        public m3u8: string = '';
+        public source: HTMLSourceElement;
         public loading: boolean = false;
-        public player: any;
+        public player: HTMLVideoElement;
         public video: Video;
 
-        mounted () {
-            this.m3u8 = '';
-            this.player = videojs('TwitchPlayer');
+        public mounted () {
+            this.player = <HTMLVideoElement>document.getElementById("twitchPlayer");
+            this.player.load();
 
             this.loading = true;
             new Rest().resolveStreamUrl(this.$props.channel).then((result) => {
                 let response = JSON.parse(result) as any;
                 if (response.success) {
                     this.video = new Video(response);
-                    this.m3u8 = this.video.bestResolution();
-
-                    this.player.src({
-                        src: this.m3u8,
-                        type: 'application/x-mpegURL'
-                    });
-                    this.player.play();
+                    this.source = document.createElement("source");
+                    this.source.setAttribute("src", this.video.bestResolution());
+                    this.source.setAttribute("type", "application/x-mpegURL");
+                    this.player.appendChild(this.source);
 
                     this.loading = false;
                 }
@@ -58,12 +56,13 @@
 
         }
 
-        beforeDestroy() {
-            this.player.dispose();
+        public beforeDestroy() {
+            //this.player.dispose();
         }
     }
 </script>
-<style>
+
+<style scoped>
     .one.column.row.video-column {
         height: 100%;
         display: flex;

@@ -1,7 +1,7 @@
 <template>
     <div class="ui basic segment animated slideInDown mb-0">
         <div class="ui grid padded">
-            <router-link :to="{ name: 'home'}" href="#" class="ui medium image logo-img"></router-link>
+            <router-link :to="{ name: 'home'}" href="#" class="ui medium image logo-img no-navi"></router-link>
             <div class="ui three massive basic menu">
                 <router-link :to="{ name: 'game-featured'}" class="ui animated item large" ref="navigationItemGames">
                     <i class="gamepad icon"></i>
@@ -34,7 +34,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .ui.menu {
         background: transparent;
         border: none;
@@ -55,13 +55,6 @@
     }
     .ui.menu .item:first-of-type {
         margin-left: 0;
-    }
-    .ui.menu .item:after {
-        width: 80%;
-        text-align: center;
-        display: block;
-        content: '';
-        height: 3px;
     }
     .ui.menu .item.router-link-active {
         color: #fff;
