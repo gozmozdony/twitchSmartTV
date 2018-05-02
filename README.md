@@ -47,6 +47,15 @@ http://webostv.developer.lge.com/sdk/using-webos-tv-cli/testing-web-app-cli/#Lis
 
 Connect the remote app on your smartphone, or use your TV remote, to navigate and start the application.
 
+## Compatible - Tested devices
+
+The application has been tested on the following tools/devices:
+* [TV] LG 47LB650V
+* [TOOL] webOS Simulator 3.0.0
+```
+If you have tested on a device that is not listed, please leave a feedback for me to add it to the list and/or fix the issues you have encountered.
+```
+
 ## Contribution
 
 Anyone who have ideas how to make it better, feel free to make an issue, or contribute to the code.
