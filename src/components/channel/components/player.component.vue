@@ -57,19 +57,19 @@
             this.player = <HTMLVideoElement>document.getElementById("twitchPlayer");
             this.player.load();
 
+            this.player.addEventListener('loadeddata', () => {
+                this.loading = false;
+                this.playing = true;
+            }, false);
+
             this.loading = true;
             new Rest().resolveStreamUrl(this.$props.channel).then((result) => {
                 let response = JSON.parse(result) as any;
-                if (response.success) {
-                    this.video = new Video(response);
-                    this.source = document.createElement("source");
-                    this.source.setAttribute("src", this.video.bestResolution());
-                    this.source.setAttribute("type", "application/x-mpegURL");
-                    this.player.appendChild(this.source);
-                    this.playing = true;
-
-                    this.loading = false;
-                }
+                this.video = new Video(response.streams);
+                this.source = document.createElement("source");
+                this.source.setAttribute("src", this.video.bestResolution());
+                this.source.setAttribute("type", "application/x-mpegURL");
+                this.player.appendChild(this.source);                
             });
 
         }

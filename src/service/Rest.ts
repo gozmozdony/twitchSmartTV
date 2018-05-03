@@ -37,12 +37,13 @@ export class Rest {
 
     public resolveStreamUrl(url: string): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
-            this.objHttpReq.open("GET", SERVER_API + '?url=' + url);
-            this.objHttpReq.setRequestHeader('Accept', 'application/json');
-            this.objHttpReq.setRequestHeader('Authorization', SERVER_STREAMLINK);
-            this.objHttpReq.onload = () => resolve(this.objHttpReq.responseText);
-            this.objHttpReq.onerror = () => reject(this.objHttpReq.statusText);
-            this.objHttpReq.send();
+            let data = new FormData();
+            data.append('Authorization', 'Bearer me7m66itmg83kfvvq636qzbmxas78jqr1xp4akn');
+            data.append('url', url);
+            this.objHttpReq.open("POST", SERVER_API);
+            this.objHttpReq.onload = (): string => resolve(this.objHttpReq.responseText);
+            this.objHttpReq.onerror = (): string => reject(this.objHttpReq.statusText);
+            this.objHttpReq.send(data);
         });
     }
 }
