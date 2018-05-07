@@ -1,6 +1,6 @@
 {
   "name": "twitch-webos",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Twitch for webos",
   "main": "index.js",
   "types": "sfc",
@@ -40,6 +40,7 @@
     "vue": ">=2.4.2",
     "vue-class-component": ">=5.0.2",
     "vue-global-events": "^1.0.3",
+    "vue-lazyload": "^1.2.3",
     "vue-property-decorator": ">=5.2.1",
     "vue-resource": ">=1.3.4",
     "vue-router": "^3.0.1",

@@ -39,7 +39,7 @@
 }
 body {
     background-color: #17141f;
-    background-image: url(https://static.twitchcdn.net/assets/homepage_gradient_background-4e041d518ac547864a0fffe9f1dc3d96.png),url(https://static.twitchcdn.net/assets/homepage_player_background-917af84661ea166012c8282e3ccb931a.jpg);
+    background-image: url(bg_gradient.png),url(bg.jpg);
     background-repeat: no-repeat;
     background-position: top
 }
@@ -130,6 +130,7 @@ body {
 .ui.grid.scrollable .content .clickable{
     display: inline-block;
     outline: none;
+    vertical-align: top;
 }
 a.ui.card {
     outline: none;

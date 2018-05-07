@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div class="image">
-                        <img v-bind:src="game.box.sized"/>
+                        <img v-lazy="game.box.sized"/>
                     </div>
                 </router-link>
             </div>

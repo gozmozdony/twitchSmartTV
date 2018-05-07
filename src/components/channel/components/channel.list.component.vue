@@ -4,7 +4,7 @@
             <div v-for="channel in list" :key="channel.id" class="four wide clickable">
                 <router-link :to="{ name: 'game', params: { channel: channel.name }}" class="ui card animated fadeInDown">
                     <div class="image" v-bind:style="{ 'background-color': channel.logo ? '' : '#6441A4' }">
-                        <img v-bind:src="channel.logo ? channel.logo : 'largeIcon.png'"/>
+                        <img v-lazy="channel.logo ? channel.logo : './largeIcon.png'"/>
                     </div>
                     <div class="content"  :class="{'live': channel.live}">
                         <div class="header">{{ channel.name }}</div>

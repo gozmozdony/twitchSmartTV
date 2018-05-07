@@ -15,7 +15,10 @@ import VueRouter from "vue-router";
 // @ts-ignore
 import GlobalEvents from 'vue-global-events';
 import NavigationService from "./service/navigation.service";
+// @ts-ignore
+import VueLazyload from 'vue-lazyload';
 
+Vue.use(VueLazyload);
 Vue.use(VueRouter);
 Vue.component(GlobalEvents);
 

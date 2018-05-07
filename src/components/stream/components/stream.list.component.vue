@@ -4,7 +4,7 @@
             <div v-for="stream in list" :key="stream.id" class="four wide clickable">
                 <router-link :to="{ name: 'game', params: { channel: stream.channel.name }}" class="ui card animated fadeInDown" :ref="stream.id">
                     <div class="image">
-                        <img v-bind:src="stream.preview.large"/>
+                        <img v-lazy="stream.preview.large"/>
                     </div>
                     <div class="content">
                         <div class="header">{{ stream.channel.name }}</div>
