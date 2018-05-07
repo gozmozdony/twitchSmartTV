@@ -1,12 +1,12 @@
 {
   "name": "twitch-webos",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Twitch for webos",
   "main": "index.js",
   "types": "sfc",
   "scripts": {
     "build": "webpack",
-    "build:prod": "set NODE_ENV=production; yarn build",
+    "build:prod": "SET NODE_ENV=production&& webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,13 +29,13 @@
     "webpack": "^3.1.0"
   },
   "dependencies": {
+    "@types/hls.js": "^0.8.1",
     "@types/promise-polyfill": "^6.0.0",
     "@types/video.js": ">=6.2.4",
     "gulp": "^3.9.1",
+    "hls.js": "^0.9.1",
     "promise-polyfill": ">=6.0.2",
     "rxjs": "^5.5.10",
-    "semantic": "0.0.1",
-    "semantic-ui": "^2.3.1",
     "videojs-contrib-hls": ">=5.8.3",
     "vue": ">=2.4.2",
     "vue-class-component": ">=5.0.2",

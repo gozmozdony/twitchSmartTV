@@ -16,28 +16,30 @@ What things you need to install the software and how to install them
 * LG Developer App from the WebOs App Store
 * LG Remote App from IOS App Store or Android Google play
 * [WebOs SDK](http://webostv.developer.lge.com/sdk/download/download-sdk/) - Current version of the LG WebOs SDK
-* [NPM](https://www.npmjs.com/get-npm?utm_source=house&utm_medium=homepage&utm_campaign=free%20orgs&utm_term=Install%20npm) - * NPM package manager with NodeJS
+* [YARN](https://yarnpkg.com/en/docs/install#windows-stable) - * YARN package manager
 
 
 ### Installing
 
-Install the WebOs SDK with the NPM package manager to your computer.
+Install the WebOs SDK with YARN package manager to your computer.
 Then clone this repository to your local machine.
 
 Run NPM to install dependencies, in the main folder of the project.
 ```
-npm install
+yarn install
 ```
 
-After the NPM installed the requirements, run the build.
+After the yarn installed the requirements, run the build.
 ```
-npm run build
-npm run build -- --watch ( if you want to run it in live development mode)
+yarn run build
+yarn run build -- --watch ( if you want to run it in live development mode)
 ```
 
-You can test the application in any browser, by opening the index.html from the root directory.
+You can test the application in any browser, by opening the index.html from the dist directory.
 
 ## Deployment
+
+In the WebOs SDK open import the dist build directory as a webOs Project.
 
 To deploy it on a WebOs TV follow these steps to create the required connection to your TV:
 http://webostv.developer.lge.com/develop/app-test/

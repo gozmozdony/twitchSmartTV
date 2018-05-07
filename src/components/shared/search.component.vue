@@ -1,7 +1,7 @@
 <template>
     <div class="ui grid padded search-bar animated fadeIn">
         <div class="one column row">
-            <div class="column">
+            <div class="column" style="display: block;">
                 <div class="ui search" v-bind:class="{ loading: loading }">
                     <div class="ui icon massive input" style="width: 100%;" ref="search" v-on:keyup.enter="setFocus()" tabindex="1">
                         <input class="prompt" type="text" v-model="input" ref="searchInput" :placeholder="'Search ' + service.type + '...'" v-on:keyup.enter="search()">
@@ -73,8 +73,16 @@
         z-index: 101;
         position: relative;
     }
+    .search-bar .ui.search {
+        width: 100%;
+    }
+    .search-bar .ui.search .ui.icon.input{
+        width: 100%;
+    }
     .search-bar .ui.search .ui.icon.input>input{
         font-size: 1.5rem;
+        display: block;
+        width: 100%;
     }
     .search-bar  .ui.loading.loading.input>i.icon:after {
         top: 45%;

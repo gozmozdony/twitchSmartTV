@@ -24,7 +24,7 @@ export class Stream extends Default {
             this.channel = new Channel(data.channel);
             this.created_at = data.created_at;
             this.delay = data.delay;
-            this.game = data.game;
+            this.game = data.game === "" ? "IRL" : data.game; 
             this.is_playlist = data.is_playlist;
             this.preview = new Image(data.preview);
             this.video_height = data.video_height;
