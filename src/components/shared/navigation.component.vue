@@ -3,6 +3,7 @@
     import NavigationService from "../../service/navigation.service";
     import NavigationItem from "../../models/NavigationItem";
     import NavigationGroup from "../../models/NavigationGroup";
+    import { RawLocation } from "vue-router/types/router";
 
     const MOUSEWHEEL_EVENT = 'mousewheel';
     const SCROLLABLE_CLASS = 'scrollable';
@@ -39,6 +40,10 @@
         public destroyed() {
             NavigationService.removeByIdentifier(this.$vnode.tag as string);
             document.removeEventListener(MOUSEWHEEL_EVENT, this.mouseWheel);
+        }
+        
+        public navigate(route: RawLocation, param?: Object) {
+             this.$router.push({ name: route, params: param} as any);
         }
     }
 </script>

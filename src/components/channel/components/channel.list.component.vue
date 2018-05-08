@@ -2,7 +2,7 @@
     <div class="ui grid padded scrollable">
         <div class="content">
             <div v-for="channel in list" :key="channel.id" class="four wide clickable">
-                <router-link :to="{ name: 'game', params: { channel: channel.name }}" class="ui card animated fadeInDown">
+                <router-link  v-on:keyup.enter="navigate('game',  { channel: channel.name })" :to="{ name: 'game', params: { channel: channel.name }}" class="ui card animated fadeInDown">
                     <div class="image" v-bind:style="{ 'background-color': channel.logo ? '' : '#6441A4' }">
                         <img v-lazy="channel.logo ? channel.logo : './largeIcon.png'"/>
                     </div>

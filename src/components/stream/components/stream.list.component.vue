@@ -2,7 +2,7 @@
     <div class="ui grid padded scrollable">
         <div class="content">
             <div v-for="stream in list" :key="stream.id" class="four wide clickable">
-                <router-link :to="{ name: 'game', params: { channel: stream.channel.name }}" class="ui card animated fadeInDown" :ref="stream.id">
+                <router-link v-on:keyup.enter="navigate('game',  { channel: stream.channel.name })" :to="{ name: 'game', params: { channel: stream.channel.name }}" class="ui card animated fadeInDown" :ref="stream.id">
                     <div class="image">
                         <img v-lazy="stream.preview.large"/>
                     </div>

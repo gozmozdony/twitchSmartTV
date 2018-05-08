@@ -2,7 +2,7 @@
     <div class="ui grid padded scrollable">
         <div class="content">
             <div v-for="game in list" :key="game.id" class="four wide clickable">
-                <router-link :to="{ name: 'stream-search', params: { game: game.localized_name }}" class="ui card animated fadeInDown" :ref="game.id">
+                <router-link v-on:keyup.enter="navigate('stream-search',  { game: game.localized_name })"  :to="{ name: 'stream-search', params: { game: game.localized_name }}" class="ui card animated fadeInDown" :ref="game.id">
                     <div class="content">
                         <div class="header">{{ game.name }}</div>
                         <div class="meta">
