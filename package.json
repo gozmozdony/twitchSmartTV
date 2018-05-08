@@ -14,7 +14,7 @@
     "url": "git+ssh://git@github.com/gozmozdony/twitchWebOs.git"
   },
   "author": "Gyula Szakacs",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gozmozdony/twitchWebOs/issues"
   },
@@ -33,7 +33,6 @@
     "@types/promise-polyfill": "^6.0.0",
     "@types/video.js": ">=6.2.4",
     "gulp": "^3.9.1",
-    "hls.js": "^0.9.1",
     "promise-polyfill": ">=6.0.2",
     "rxjs": "^5.5.10",
     "videojs-contrib-hls": ">=5.8.3",

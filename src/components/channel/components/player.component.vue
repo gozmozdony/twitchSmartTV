@@ -17,7 +17,9 @@
                         </button>
                     </div>
                 </div>
-                <video id="twitchPlayer" width="1536" height="864" autoplay></video>            
+                <video id="twitchPlayer" width="1536" height="864" autoplay preload="auto" controls>
+                    <p> Video is not visible, most likely your browser does not support HTML5 video </p> 
+                    </video>            
             </div>
         </div>
     </div>
@@ -32,7 +34,6 @@
     import NavigationService from "../../../service/navigation.service";
     import NavigationGroup from "../../../models/NavigationGroup";
     import NavigationItem from "../../../models/NavigationItem";
-    //import Hls from "hls.js";
 
 
     @Component({
@@ -49,7 +50,6 @@
         public loading: boolean = false;
         public player: HTMLVideoElement;
         public playing: boolean = false;
-        //public hls: Hls = new Hls();
         public video: Video;
 
         public mounted (): void {
@@ -60,39 +60,21 @@
             this.player.load();
 
             this.player.addEventListener('loadeddata', () => {
-                this.loading = false;
                 this.playing = true;
-                this.player.play();
-            });
+            }, false);
 
             this.loading = true;
             new Rest().resolveStreamUrl(this.$props.channel).then((result) => {
                 let response = JSON.parse(result) as any;
                 this.video = new Video(response.streams);
-                this.handleHLS();
-            });
-        }
-
-        public handleHLS(): void {
-            //console.log(Hls.isSupported());
-            /*if(Hls.isSupported()) {
-                this.hls.loadSource(this.video.bestResolution());
-                this.hls.attachMedia(this.player);
-                this.hls.on(Hls.Events.MANIFEST_PARSED, () => {
-                    this.loading = false;
-                    this.playing = true;
-                    this.player.play();
-                });
-            } else if (this.player.canPlayType('application/vnd.apple.mpegurl')) {*/
                 this.source = document.createElement("source");
                 this.source.setAttribute("src", this.video.bestResolution());
                 this.source.setAttribute("type", "application/x-mpegURL");
                 
                 this.player.appendChild(this.source);
-                this.player.play();
+                this.player.removeAttribute('controls');
                 this.loading = false;
-                this.playing = true;
-            //}
+            });
         }
 
         public fullScreen(): void {
@@ -106,20 +88,18 @@
         }
 
         public stopStart(): void {        
-            if (this.player.paused) {
+            /*if (this.player.paused) {
                 this.player.play();                
             } else {
                 this.player.pause();
             }
-            this.playing = !this.player.paused;
+            this.playing = !this.player.paused;*/
         }
 
         public beforeDestroy(): void {
             this.player.pause()
-            //this.hls.stopLoad();
-            //if (this.source) {
-                this.player.removeChild(this.source);
-            //}
+            this.player.removeChild(this.source);
+
             NavigationService.removeByIdentifier('videoExpand');            
             NavigationService.removeByIdentifier('videoNav');            
         }
@@ -132,10 +112,6 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-    }
-    .one.column.row.video-column .video-js {
-        height: 78vh !important;
-        width: 70vw !important;
     }
     .ui.active.centered.dimmer.player-loader {
         background: transparent;
