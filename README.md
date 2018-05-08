@@ -1,6 +1,6 @@
-# Smart TV Twitch.tv application
+# Smart TV Twitch.TV application
 
-A smart TV appliaction to watch your favourite strams for webOs and Tizen OS.
+A Smart TV appliaction to watch your favourite strams for webOs and Tizen OS.
 I'm not using the TwitchJs to embedd videos, because of the hardware limitations of webOs TV-s. Therefore you can't see the chat and all the other functions that twitch provides.
 
 ## Getting Started
@@ -14,12 +14,6 @@ What things you need to install the software and how to install them
 Common
 * [YARN](https://yarnpkg.com/en/docs/install#windows-stable) - * YARN package manager
 
-Tizen
-* Samsung Tizen TV
-* Tizen studio
-* [Tizen emulator](https://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-emulator)
-* [Tizen SDK](https://developer.samsung.com/tv/develop/getting-started/setting-up-sdk/installing-tv-sdk) - Current version of the Tizen SDK
-
 webOS
 * LG WebOs TV
 * LG Developer account
@@ -27,16 +21,23 @@ webOS
 * LG Remote App from IOS App Store or Android Google play
 * [WebOs SDK](http://webostv.developer.lge.com/sdk/download/download-sdk/) - Current version of the LG WebOs SDK
 
+Tizen
+* Samsung Tizen TV
+* Tizen studio
+* [Tizen emulator](https://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-emulator)
+* [Tizen SDK](https://developer.samsung.com/tv/develop/getting-started/setting-up-sdk/installing-tv-sdk) - Current version of the Tizen SDK
 
 ### Installing
 
 Install the YARN package manager to your computer.
-Then clone this repository to your local machine.
+Then clone this repository to your local machine and checkout the webOs/Tizen branch.
 
 Run YARN to install dependencies, in the main folder of the project.
 ```
 yarn install
 ```
+
+### Building
 
 After the yarn installed the requirements, run the build.
 ```
