@@ -88,12 +88,12 @@
         }
 
         public stopStart(): void {        
-            /*if (this.player.paused) {
+            if (this.player.paused) {
                 this.player.play();                
             } else {
                 this.player.pause();
             }
-            this.playing = !this.player.paused;*/
+            this.playing = !this.player.paused;
         }
 
         public beforeDestroy(): void {
