@@ -8,11 +8,11 @@
 </Reference>
 <Reference URI="LICENSE.APLv2">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>z8d0m5b2O9McPEK1xHG/dWgUBT6EfBDz6wA0F7xSPTA=</DigestValue>
+<DigestValue>Pd+b5cKP4n2tFDpdx27qJSIq0d1ok0oEcGTlbtL6QMU=</DigestValue>
 </Reference>
 <Reference URI="NOTICE">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ijjaB8GEO5OJP/jK6n7Hr3vZFI9gy8ocoDhviViKNnU=</DigestValue>
+<DigestValue>ATOjG+XUHRQmFB19IQFo4Wc9vEgKp7ypHXHMXIH/QGY=</DigestValue>
 </Reference>
 <Reference URI="assets%2FTwitch_White_RGB.svg">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -36,7 +36,7 @@
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>fuuzjqon0eZ+5prC84JElF9srjveBu4XpxO+1Cpa4e0=</DigestValue>
+<DigestValue>ndE6kHZin9ZDm4W8eLeIHIVYFqc6zUV1bFciYKvzcik=</DigestValue>
 </Reference>
 <Reference URI="icon.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -312,7 +312,7 @@
 </Reference>
 <Reference URI="version.txt">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ROFh5ElcrCz3hYBD6eZBjpV58N3ProJvmjcmIpaM4GY=</DigestValue>
+<DigestValue>80MGu1Di0uxZx4i5ATxaxoLvf39pNFo+lX44wLa6L90=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -323,9 +323,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-DHcfMczw98Uo9aLjjdG09FfvSJ1dyvPadc340hN8hp94MgJvGphtt8RExR2/TesiMIBEzE/qQ1Vf
-NFddB/w/Q2zOGmdGkwwkbKWDmKWjGtqKAln6SXzLTArqkI9DjzghRjLi7gh+ZTSKn7H0cSMfQPpI
-KxR/X/yYAnUWucdi2Zc=
+TqMKEkerdeEDdIFvBjyaDj51NmKFA9edkXBMVXILljde2eUDoWA5nfLBHaSUjrw987lkg5LKjZIk
+So4H81mkklbNk5iTyD6JekROGYt3hq0TwgWa1dYC9TfLIKn4fYjqkLiH7YWgp+KGn4BayXypfSBz
+F/tlmRubJTrdi9HSSRA=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
