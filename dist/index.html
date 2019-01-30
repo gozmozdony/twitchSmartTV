@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/style.css">
+	</head>
+	<body>
+		<div id="app" class="application ui main container fluid">
+			<global-events
+				@keyup.up="navigation.navigateUp"
+				@keyup.down="navigation.navigateDown"
+				@keyup.left="navigation.navigateLeft"
+				@keyup.right="navigation.navigateRight"
+			></global-events>
+			<menu-component ref="menu"></menu-component>
+			<router-view ref="router"></router-view>
+		</div>
+		<script src="./build.js"></script>
+	</body>
+</html>
