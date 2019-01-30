@@ -1,6 +1,6 @@
-import { Default } from "../../../models/Default";
+import { Default } from '../../../models/Default';
 
-export class Channel extends Default{
+export class Channel extends Default {
 
     public broadcaster_language: string;
     public created_at: Date;
@@ -41,9 +41,9 @@ export class Channel extends Default{
             this.video_banner = data.video_banner;
             this.views = data.views;
 
-            this.live = !!this.video_banner;;
+            this.live = !!this.video_banner;
 
-        }catch(e) {
+        } catch (e) {
             console.error(e);
         }
     }

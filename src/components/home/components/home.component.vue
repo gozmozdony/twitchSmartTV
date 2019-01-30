@@ -18,6 +18,7 @@
     import { GameService } from "../../game/services/game.service";
     import LoaderComponent from "../../shared/loader.component.vue";
     import GameListComponent from "../../game/components/games.list.component.vue";
+    import {AxiosResponse} from "axios";
 
     @Component({
         components: {
@@ -31,7 +32,7 @@
         public service: GameService = new GameService();
 
         public created () {
-              this.service.top().then((result: string) => {
+              this.service.top().then((result: AxiosResponse) => {
                 this.games = this.service.map(result);
                 this.loading = false;
             });
@@ -42,7 +43,7 @@
         }
 
         public search(games: Game[]) {
-            this.games = games
+            this.games = games;
             this.loading = false;
         }
     }

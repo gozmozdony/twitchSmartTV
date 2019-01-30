@@ -1,26 +1,34 @@
 {
     "compilerOptions": {
-        "strictNullChecks": true,
-        "outDir": "./built/",
-        "sourceMap": true,
-        "declaration": false,
-        "strict": true,
-        "noImplicitReturns": true,
-        "module": "es6",
-        "moduleResolution": "node",
-        "target": "es5",
-        "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
+        "declaration": false,
         "emitDecoratorMetadata": true,
-        "strictPropertyInitialization": false,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
+        "experimentalDecorators": true,
         "jsx": "preserve",
         "jsxFactory": "h",
-        "lib": ["es5", "dom", "es2015.promise"]
+        "lib": ["es5", "dom", "es2015.promise"],
+        "module": "es6",
+        "moduleResolution": "node",
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "sourceMap": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": false,
+        "target": "es5"
     },
     "include": [
-        "./src/**/*"
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+      "shims-tsx.d.ts",
+      "shims-vue.d.ts"
     ],
     "typeAcquisition": {
         "enable": true

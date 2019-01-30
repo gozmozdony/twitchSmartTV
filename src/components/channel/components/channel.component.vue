@@ -56,7 +56,7 @@
         }
 
         public search(channels: Channel[]) {
-            this.channels = channels
+            this.channels = channels;
             this.loading = false;
         }
     }

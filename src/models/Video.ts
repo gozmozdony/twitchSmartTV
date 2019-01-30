@@ -15,7 +15,7 @@ export class Video {
             this.x720p = data['720p'] ? data['720p'].url : null;
             this.x720p60 = data['720p60'] ? data['720p60'].url : null;
             this.x900p60 = data['900p60'] ? data['900p60'].url : null;
-        }catch(e) {
+        } catch (e) {
             console.error(e);
         }
     }
