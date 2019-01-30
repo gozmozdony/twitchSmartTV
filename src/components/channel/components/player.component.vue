@@ -30,11 +30,10 @@
     import Component from "vue-class-component";
     import LoaderComponent from "../../shared/loader.component.vue";
     import { Video } from "../../../models/Video";
-    import { Rest } from "../../../service/Rest";
     import NavigationService from "../../../service/navigation.service";
     import NavigationGroup from "../../../models/NavigationGroup";
     import NavigationItem from "../../../models/NavigationItem";
-
+    import {Rest} from "../../../service/Rest";
 
     @Component({
         components: {            
@@ -64,9 +63,9 @@
             }, false);
 
             this.loading = true;
-            new Rest().resolveStreamUrl(this.$props.channel).then((result) => {
-                let response = JSON.parse(result) as any;
-                this.video = new Video(response.streams);
+
+            new Rest().resolveStreamUrl(this.$props.channel).then((result: any) => {
+                this.video = new Video(result.data.streams);
                 this.source = document.createElement("source");
                 this.source.setAttribute("src", this.video.bestResolution());
                 this.source.setAttribute("type", "application/x-mpegURL");
@@ -97,7 +96,7 @@
         }
 
         public beforeDestroy(): void {
-            this.player.pause()
+            this.player.pause();
             this.player.removeChild(this.source);
 
             NavigationService.removeByIdentifier('videoExpand');            

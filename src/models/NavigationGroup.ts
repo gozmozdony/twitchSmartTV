@@ -25,7 +25,7 @@ export default class NavigationGroup implements Navigatable {
     public disable(): void {
         const active = this.isActive();
         if (active >= 0) {
-            this.navigationElements[active].active = false;   
+            this.navigationElements[active].active = false;
         }
     }
 
@@ -49,7 +49,7 @@ export default class NavigationGroup implements Navigatable {
         const active = this.isActive();
         if (active !== 0) {
             this.navigationElements[active].active = false;
-            this.navigationElements[active - 1].setActive();           
+            this.navigationElements[active - 1].setActive();
         }
     }
 

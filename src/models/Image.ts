@@ -17,7 +17,7 @@ export class Image {
                 this.sized = this.template.replace('{width}', '965').replace('{height}', '1348');
             }
             this.sized = this.template.replace('{width}', '480').replace('{height}', '670');
-        }catch(e) {
+        } catch (e) {
             console.error(e);
         }
     }

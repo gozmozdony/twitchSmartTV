@@ -1,6 +1,6 @@
-import { Default } from "../../../models/Default";
-import { Image } from "../../../models/Image";
-import { Channel } from "../../channel/models/Channel";
+import { Default } from '../../../models/Default';
+import { Image } from '../../../models/Image';
+import { Channel } from '../../channel/models/Channel';
 
 export class Stream extends Default {
 
@@ -24,13 +24,13 @@ export class Stream extends Default {
             this.channel = new Channel(data.channel);
             this.created_at = data.created_at;
             this.delay = data.delay;
-            this.game = data.game === "" ? "IRL" : data.game; 
+            this.game = data.game === '' ? 'IRL' : data.game;
             this.is_playlist = data.is_playlist;
             this.preview = new Image(data.preview);
             this.video_height = data.video_height;
             this.viewers = data.viewers;
 
-        }catch(e) {
+        } catch (e) {
             console.error(e);
         }
     }

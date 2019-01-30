@@ -1,5 +1,5 @@
-import { Default } from "../../../models/Default";
-import { Image } from "../../../models/Image";
+import { Default } from '../../../models/Default';
+import { Image } from '../../../models/Image';
 
 export class Game extends Default {
 
@@ -12,7 +12,7 @@ export class Game extends Default {
 
     constructor(data?: any) {
         super();
-        
+
         try {
             this.id = data.game ? data.game._id : data._id;
             this.channels = data.channels;
@@ -21,7 +21,7 @@ export class Game extends Default {
             this.logo = new Image(data.game ? data.game.logo : data.logo);
             this.name = data.game ? data.game.name : data.name;
             this.localized_name = data.game ? data.game.localized_name : data.localized_name;
-        }catch(e) {
+        } catch (e) {
             console.error(e);
         }
     }

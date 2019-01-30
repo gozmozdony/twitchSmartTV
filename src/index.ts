@@ -1,22 +1,15 @@
-import Vue from "vue";
-// @ts-ignore
-import GamesComponent from "./components/game/components/game.component.vue";
-// @ts-ignore
-import PlayerComponent from "./components/channel/components/player.component.vue";
-// @ts-ignore
-import ChannelComponent from "./components/channel/components/channel.component.vue";
-// @ts-ignore
-import StreamComponent from "./components/stream/components/stream.component";
-// @ts-ignore
-import HomeComponent from "./components/home/components/home.component";
-// @ts-ignore
-import MenuComponent from "./components/shared/menu.component.vue";
-import VueRouter from "vue-router";
+import ChannelComponent from './components/channel/components/channel.component.vue';
+import GamesComponent from './components/game/components/game.component.vue';
 // @ts-ignore
 import GlobalEvents from 'vue-global-events';
-import NavigationService from "./service/navigation.service";
-// @ts-ignore
+import HomeComponent from './components/home/components/home.component.vue';
+import MenuComponent from './components/shared/menu.component.vue';
+import NavigationService from './service/navigation.service';
+import PlayerComponent from './components/channel/components/player.component.vue';
+import StreamComponent from './components/stream/components/stream.component.vue';
+import Vue from 'vue';
 import VueLazyload from 'vue-lazyload';
+import VueRouter from 'vue-router';
 
 Vue.use(VueLazyload);
 Vue.use(VueRouter);

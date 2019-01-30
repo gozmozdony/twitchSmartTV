@@ -4,7 +4,7 @@ export abstract class Default {
     cosntructor(data?: any) {
         try {
             this.id = data._id;
-        }catch(e) {
+        } catch (e) {
             console.error(e);
         }
     }
