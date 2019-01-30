@@ -17,7 +17,9 @@
                         </button>
                     </div>
                 </div>
-                <video id="twitchPlayer" width="1536" height="864" autoplay></video>            
+                <video id="twitchPlayer" width="1536" height="864" autoplay preload="auto" controls>
+                    <p> Video is not visible, most likely your browser does not support HTML5 video </p> 
+                    </video>            
             </div>
         </div>
     </div>
@@ -28,11 +30,10 @@
     import Component from "vue-class-component";
     import LoaderComponent from "../../shared/loader.component.vue";
     import { Video } from "../../../models/Video";
-    import { Rest } from "../../../service/Rest";
     import NavigationService from "../../../service/navigation.service";
     import NavigationGroup from "../../../models/NavigationGroup";
     import NavigationItem from "../../../models/NavigationItem";
-
+    import {Rest} from "../../../service/Rest";
 
     @Component({
         components: {            
@@ -58,25 +59,21 @@
             this.player.load();
 
             this.player.addEventListener('loadeddata', () => {
-                this.loading = false;
                 this.playing = true;
-                this.player.play();
-            });
+            }, false);
 
             this.loading = true;
-            new Rest().resolveStreamUrl(this.$props.channel).then((result) => {
-                let response = JSON.parse(result) as any;
-                this.video = new Video(response.streams);
-                this.handleHLS();
-            });
-        }
 
-        public handleHLS(): void {
-            this.source = document.createElement("source");
-            this.source.setAttribute("src", this.video.bestResolution());
-            this.source.setAttribute("type", "application/x-mpegURL");
-            
-            this.player.appendChild(this.source);
+            new Rest().resolveStreamUrl(this.$props.channel).then((result: any) => {
+                this.video = new Video(result.data.streams);
+                this.source = document.createElement("source");
+                this.source.setAttribute("src", this.video.bestResolution());
+                this.source.setAttribute("type", "application/x-mpegURL");
+                
+                this.player.appendChild(this.source);
+                this.player.removeAttribute('controls');
+                this.loading = false;
+            });
         }
 
         public fullScreen(): void {
@@ -99,8 +96,9 @@
         }
 
         public beforeDestroy(): void {
-            this.player.pause()
+            this.player.pause();
             this.player.removeChild(this.source);
+
             NavigationService.removeByIdentifier('videoExpand');            
             NavigationService.removeByIdentifier('videoNav');            
         }
@@ -113,10 +111,6 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-    }
-    .one.column.row.video-column .video-js {
-        height: 78vh !important;
-        width: 70vw !important;
     }
     .ui.active.centered.dimmer.player-loader {
         background: transparent;

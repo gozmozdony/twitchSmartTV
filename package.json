@@ -1,13 +1,13 @@
 {
   "name": "twitch-webos",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Twitch for webos",
   "main": "index.js",
   "types": "sfc",
   "scripts": {
     "build": "webpack",
-    "build:prod": "SET NODE_ENV=production&& webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "tslint --project tsconfig.json",
+    "lint:fix": "tslint --project tsconfig.json --fix"
   },
   "repository": {
     "type": "git",
@@ -22,27 +22,19 @@
   "devDependencies": {
     "css-loader": "^0.28.4",
     "ts-loader": "^2.2.2",
-    "tslint": "^5.9.1",
+    "tslint": "^5.12.1",
     "typescript": "^2.5.3",
     "vue-loader": "^13.0.1",
     "vue-template-compiler": "^2.2.1",
     "webpack": "^3.1.0"
   },
   "dependencies": {
-    "@types/hls.js": "^0.8.1",
-    "@types/promise-polyfill": "^6.0.0",
-    "@types/video.js": ">=6.2.4",
-    "gulp": "^3.9.1",
-    "promise-polyfill": ">=6.0.2",
-    "rxjs": "^5.5.10",
-    "videojs-contrib-hls": ">=5.8.3",
+    "axios": "^0.18.0",
     "vue": ">=2.4.2",
     "vue-class-component": ">=5.0.2",
     "vue-global-events": "^1.0.3",
     "vue-lazyload": "^1.2.3",
     "vue-property-decorator": ">=5.2.1",
-    "vue-resource": ">=1.3.4",
-    "vue-router": "^3.0.1",
-    "vue-rx": "^5.0.0"
+    "vue-router": "^3.0.1"
   }
 }

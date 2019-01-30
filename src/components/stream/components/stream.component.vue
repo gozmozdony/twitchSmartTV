@@ -52,7 +52,7 @@
 
         public created () {
             this.loading= true;
-            this.service.search(this.$props.game).then((result: string) => {
+            this.service.search(this.$props.game).then((result: any) => {
                 this.streams = this.service.map(result);
 
                 this.loading = false;
@@ -64,7 +64,7 @@
         }
 
         public search(streams: Stream[]) {
-            this.streams = streams
+            this.streams = streams;
             this.loading = false;
         }
     }

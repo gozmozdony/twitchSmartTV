@@ -58,7 +58,7 @@ export default class NavigationService {
 
     public static removeByIdentifier(identifier: string) {
         this.navigationGroups = this.navigationGroups.filter((nav: NavigationGroup) => {
-            return nav.identifier != identifier;
+            return nav.identifier !== identifier;
         });
     }
 }
