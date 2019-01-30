@@ -1,0 +1,305 @@
+/*****************************/
+/** MAIN COMP. STYLE        **/
+/*****************************/
+.main-segment {
+    min-height: 80vh;
+    position: relative;
+}
+.main-segment:after {
+    content: '';
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 4%;
+    background-image: linear-gradient(90deg, transparent 14%, #17141f 81%);
+}
+.info-message {
+    height: 66vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info-message h2 {
+    font-size: 2.5rem !important;
+}
+.info-message i.circular.icon {
+    -webkit-box-shadow: 0 0 0 0.1em rgba(255,255,255,.3) inset;
+    box-shadow: 0 0 0 0.1em rgba(255,255,255,.3) inset
+}
+.twitchPurple {
+    background: #6441A4;
+}
+#content {
+    margin-left: 260px;
+    margin-right: 1em;
+    -webkit-transform: initial;
+    transform: initial;
+}
+body {
+    background-color: #17141f;
+    background-image: url(bg_gradient.png),url(bg.jpg);
+    background-repeat: no-repeat;
+    background-position: top
+}
+.mt-0 {
+    margin-top: 0 !important;
+}
+.pt-0 {
+    padding-top: 0 !important;
+}
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+.pb {
+    padding-bottom: 0 !important;
+}
+/*****************************/
+/** ANIMATION DELAYS        **/
+/*****************************/
+
+.clickable:nth-child(1) a.ui.card{
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+.clickable:nth-child(2) a.ui.card{
+    -webkit-animation-delay: .2s;
+    animation-delay: .2s;
+}
+.clickable:nth-child(3) a.ui.card{
+    -webkit-animation-delay: .4s;
+    animation-delay: .4s;
+}
+.clickable:nth-child(4) a.ui.card{
+    -webkit-animation-delay: .6s;
+    animation-delay: .6s;
+}
+.clickable:nth-child(5) a.ui.card{
+    -webkit-animation-delay: .8s;
+    animation-delay: .8s;
+}
+.clickable:nth-child(6) a.ui.card{
+    -webkit-animation-delay: 1.0s;
+    animation-delay: 1.0s;
+}
+.clickable:nth-child(7) a.ui.card{
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+}
+.clickable:nth-child(8) a.ui.card{
+    -webkit-animation-delay: 1.4s;
+    animation-delay: 1.4s;
+}
+.clickable:nth-child(9) a.ui.card{
+    -webkit-animation-delay: 1.6s;
+    animation-delay: 1.6s;
+}
+.clickable:nth-child(10) a.ui.card{
+    -webkit-animation-delay: 1.8s;
+    animation-delay: 1.8s;
+}
+.clickable:nth-child(11) a.ui.card{
+    -webkit-animation-delay: 2.0s;
+    animation-delay: 2.0s;
+}
+
+
+/*****************************/
+/** MENU STYLE              **/
+/*****************************/
+.ui.medium.image.logo-img {
+    background-image: url('./Twitch_White_RGB.svg');
+    background-repeat: no-repeat;
+    height: 100px;
+    outline: none;
+    background-position: center center;
+}
+/*****************************/
+/** LIST STYLE              **/
+/*****************************/
+.ui.grid.scrollable {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 73%;
+}
+.ui.grid.scrollable > .content {
+    width: auto;
+    white-space: nowrap;
+}
+.ui.grid.scrollable .content .clickable{
+    display: inline-block;
+    outline: none;
+    vertical-align: top;
+}
+a.ui.card {
+    outline: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    width: 350px;
+    margin: 1rem .5rem !important;
+    -webkit-transition : all 100ms ease-out; 
+    -moz-transition : all 100ms ease-out;
+    -o-transition : all 100ms ease-out;
+    transition : all 100ms ease-out;
+}
+
+.ui.icon.input:focus {
+    outline: none;
+}
+
+.ui.icon.input>input:focus, .ui.icon.input>input:hover, .ui.icon.input:focus>input, .ui.icon.input:hover>input {
+    -webkit-box-shadow: 0px 0px 8px 3px #6441A4;
+    box-shadow: 0px 0px 8px 3px #6441A4;
+    -webkit-transition : all .2s ease-in-out; 
+    -moz-transition : all .2s ease-in-out;
+    -o-transition : all .2s ease-in-out;
+    transition : all .2s ease-in-out;  
+}
+
+i.circular.icon {
+    -webkit-box-shadow: 0 0 0 0.1em rgba(255,255,255,.4) inset;
+    box-shadow: 0 0 0 0.1em rgba(255,255,255,.4) inset;
+}
+
+a.ui.card:focus, a.ui.card:hover  {
+    -webkit-box-shadow: 0px 0px 8px 3px #6441A4;
+    box-shadow: 0px 0px 8px 3px #6441A4;
+    -webkit-transition : all .2s ease-in-out; 
+    -moz-transition : all .2s ease-in-out;
+    -o-transition : all .2s ease-in-out;
+    transition : all .2s ease-in-out;  
+}
+
+.ui.card .content {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    padding: 0;
+    background: rgba(0,0,0,0.5);
+    border-radius: 0 !important;
+}
+.ui.card .image {
+    border-radius: 0 !important;
+}
+.ui.card .content .header {
+    font-size: 2rem !important;
+    padding: 1rem .5rem 0rem .5rem;
+    color: #fff;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ui.card .content .meta {
+    display: block;
+    padding: 0rem .5rem .5rem .5rem;
+    color: #fff;
+}
+.ui.card .content .meta span {
+    font-size: 1.5rem;
+    display: block;
+    padding-top: .5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+
+/*****************************/
+/** ANIMATE CSS             **/
+/*****************************/
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@-webkit-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+
+@-webkit-keyframes slideInDown {
+    from {
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.slideInDown {
+    -webkit-animation-name: slideIndown;
+    animation-name: slideInDown;
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+  }
