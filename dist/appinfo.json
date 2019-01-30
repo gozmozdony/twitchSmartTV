@@ -1,0 +1,14 @@
+{
+    "vendor": "Gozmozdony",
+    "largeIcon": "largeIcon.png",
+    "iconColor": "#6441a5",
+    "icon": "icon.png",
+    "main": "index.html",
+    "bgImage": "background.png",
+    "id": "twitch.tv.webos.gozmozdony",
+    "title": "Twitch.TV webOs",
+    "type": "web",
+    "version": "2.2.1",
+    "splashBackground": "background.png",
+    "uiRevision":2
+}
