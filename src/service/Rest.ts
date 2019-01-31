@@ -1,42 +1,43 @@
 import axios from 'axios';
+import TwitchGetStream from 'twitch-get-stream';
 
 declare var process: {
-    env: {
-        __API__: string,
-        __CLIENTID__: string,
-        __ACCEPT__: string,
-        __KRAKEN__: string,
-        __TOKEN__: string
-    }
+  env: {
+    __API__: string,
+    __CLIENTID__: string,
+    __ACCEPT__: string,
+    __KRAKEN__: string
+  }
 };
 
 export const SERVER_API = process.env.__API__;
 export const SERVER_CLIENTID = process.env.__CLIENTID__;
 export const SERVER_ACCEPT = process.env.__ACCEPT__;
 export const SERVER_KRAKEN = process.env.__KRAKEN__;
-export const SERVER_TOKEN = process.env.__TOKEN__;
 
-export class Rest {
+interface IRest {
+  get(resource: string, query?: string): Promise<any>;
+  resolveStreamUrl(channel: string): Promise<any>;
+}
 
-    constructor () {}
+export class Rest implements IRest {
 
-    public get(resource: string, query?: string): Promise<any> {
-      return axios.request({
-        url: `${SERVER_KRAKEN}${resource}${(query ? query : '')}`,
-        headers: {
-          'Accept': SERVER_ACCEPT,
-          'Client-ID': SERVER_CLIENTID
-        }
-      });
-    }
+  public twitch = TwitchGetStream(process.env.__CLIENTID__);
 
-  public resolveStreamUrl(url: string): Promise<any> {
-      return axios.post(
-        SERVER_API,
-        {
-          'Authorization': SERVER_TOKEN,
-          'url': url
-        }
-      );
+  constructor() {
+  }
+
+  public get(resource: string, query?: string): Promise<any> {
+    return axios.request({
+      url: `${SERVER_KRAKEN}${resource}${(query ? query : '')}`,
+      headers: {
+        'Accept': SERVER_ACCEPT,
+        'Client-ID': SERVER_CLIENTID
+      }
+    });
+  }
+
+  public resolveStreamUrl(channel: string): Promise<any> {
+    return axios.get(`${SERVER_API}?channel=${channel}`);
   }
 }
