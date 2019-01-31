@@ -10,6 +10,7 @@
         "module": "es6",
         "moduleResolution": "node",
         "noImplicitReturns": true,
+        "noImplicitAny": false,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "sourceMap": true,
