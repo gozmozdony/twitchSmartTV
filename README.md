@@ -38,18 +38,26 @@ yarn install
 ```
 
 ### Building
-
+Copy and modify the content of the dev.json file.
+```
+cp env.dist.json env.json
+```
 After the yarn installed the requirements, run the build.
 ```
 yarn build [--watch]
-yarn build:prod [--watch]
+```
+
+### Development
+To run lintfix use the following command
+```
+yarn lint:fix
 ```
 
 You can test the application in any browser, by opening the index.html from the dist directory.
 
 ## webOS TV Deployment
 
-checkout the webOs branch of the repository.
+checkout the webos branch of the repository.
 In the WebOs SDK open import the dist build directory as a webOs Project.
 
 To deploy it on a WebOs TV follow these steps to create the required connection to your TV:
@@ -62,8 +70,8 @@ Connect the remote app on your smartphone, or use your TV remote, to navigate an
 
 ## Tizen TV Deployment
 
-Checkout the Tizen branch of the repository.
-In the tizen SDK open import the dist build directory as a Tizen Project.
+Checkout the tizen branch of the repository.
+In the tizen SDK import the dist build directory as a Tizen Project.
 
 To deploy it on a Tizen TV follow these steps to create the required connection to your TV.
 After the connection is successful, you can simply click on the build app in Tizen Studio.
@@ -119,13 +127,13 @@ The server that responds with the HLS stream sources, uses a token for authentic
 
 ## Versioning
 
-I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/gozmozdony/twitchWebOs/tags). 
+I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/gozmozdony/twitchSmartTV/tags). 
 
 ## Authors
 
 * **Gyula Szakács** - *Initial work* - [gozmozdony](https://github.com/gozmozdony)
 
-See also the list of [contributors](https://github.com/gozmozdony/twitchWebOs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/gozmozdony/twitchSmartTV/contributors) who participated in this project.
 
 ## License
 
