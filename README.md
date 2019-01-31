@@ -13,6 +13,7 @@ What things you need to install the software and how to install them
 
 Common
 * [YARN](https://yarnpkg.com/en/docs/install#windows-stable) - * YARN package manager
+* [Streamlink](https://streamlink.github.io) - * Streamlink cmd setup with an API endpoint.
 
 webOS
 * LG WebOs TV
