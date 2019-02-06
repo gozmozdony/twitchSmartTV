@@ -1,0 +1,7 @@
+version: '3'
+services:
+  streamlink:
+    build: .
+    ports:
+      - 8991:80
+    working_dir: '/home/docker'
