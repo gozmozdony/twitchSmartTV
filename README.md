@@ -12,9 +12,9 @@ These instructions will get you a copy of the project up and running on your Web
 What things you need to install the software and how to install them
 
 Common
-* [YARN](https://yarnpkg.com/en/docs/install#windows-stable) - * YARN package manager
-* [Streamlink](https://streamlink.github.io) - * Streamlink cmd setup with an API endpoint.
-
+* [YARN](https://yarnpkg.com/en/docs/install#windows-stable) - YARN package manager
+* [Streamlink](https://streamlink.github.io) - Streamlink twitch stream grabber
+* [Docker](https://www.docker.com/) - Docker container to setup streamlink API
 webOS
 * LG WebOs TV
 * LG Developer account
@@ -47,6 +47,11 @@ After the yarn installed the requirements, run the build.
 ```
 yarn build [--watch]
 ```
+Run docker-compose in the root to start a container with exposed API endpoint to grab stream from twitch.
+The default API endpoint is is http://localhost:8991
+```
+docker-compose up
+```
 
 ### Development
 To run lintfix use the following command
@@ -54,9 +59,11 @@ To run lintfix use the following command
 yarn lint:fix
 ```
 
+## Deployment
+
 You can test the application in any browser, by opening the index.html from the dist directory.
 
-## webOS TV Deployment
+### webOS TV Deployment
 
 checkout the webos branch of the repository.
 In the WebOs SDK open import the dist build directory as a webOs Project.
@@ -69,7 +76,7 @@ http://webostv.developer.lge.com/sdk/using-webos-tv-cli/testing-web-app-cli/#Lis
 
 Connect the remote app on your smartphone, or use your TV remote, to navigate and start the application.
 
-## Tizen TV Deployment
+### Tizen TV Deployment
 
 Checkout the tizen branch of the repository.
 In the tizen SDK import the dist build directory as a Tizen Project.
